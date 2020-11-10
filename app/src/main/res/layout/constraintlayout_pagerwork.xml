@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+    <!-- 1. 聊天文案效果图-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_pagerwork"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ff5722"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <!--       layout_constraintHorizontal_bias表示水平偏移，即“当组件左侧和右侧 ( 或者 开始 和 结束 ) 两边被约束后, 两个联系之间的比例”，取值为0-1，具体看ConstraintLayout 偏移 ( Bias ) 计算方式详解（https://hanshuliang.blog.csdn.net/article/details/97102389），我们只需要将水平偏移量设置为0，控件就会被约束在左侧了。-->
+        <!--       app:layout_constraintWidth_max="wrap" layout_constraintWidth_max表示指定视图的最大宽度，取值为“wrap”，它和“wrap_content”不同，虽然都是适应内容，但仍然允许视图比约束要求的视图更小。最终代码：-->
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@mipmap/record2"
+            android:ellipsize="end"
+            android:gravity="center_vertical"
+            android:maxLines="1"
+            android:paddingLeft="5dp"
+            android:singleLine="true"
+            android:text="Hello World!jhkadhfkjakjff"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintWidth_max="wrap" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!--   2.   条目处理 -->
+    <!--    文本适配的问题，短昵称的时候自适应，长昵称的时候，性别图标跟随文本长度移动，但是图标必须在“聊天”按钮左侧，文本显示…-->
+    <!--昵称TextView都需要收尾元素相连，我们可以使用layout_constraintHorizontal_chainStyle改变整条链的约束状态，它有三个值，分别是spread、spread_inside和packed，其中packed表示将所有 Views 打包到一起不分配多余的间隙（当然不包括通过 margin 设置多个 Views 之间的间隙），然后将整个组件组在可用的剩余位置居中
+    （可以查看Chains链布局（https://zhuanlan.zhihu.com/p/38980922）），同时由于layout_constraintHorizontal_bias="0"的作用，布局将会向左侧偏移
+    app:layout_constraintHorizontal_chainStyle="packed"
+    三、最后，当我们输入文本时，发现文本并没有约束到“聊天”按钮左侧，因为layout_width=“wrap_content”，添加的约束是不起作用的，所以需要强制约束
+
+    app:layout_constrainedWidth="true"-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_marginTop="10dp"
+        android:background="#ff5722"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cl_pagerwork">
+
+        <ImageView
+            android:id="@+id/img_1"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="@dimen/margin10"
+            android:src="@color/color333333"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"></ImageView>
+
+        <!--（注意layout_width=“wrap_content”-->
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:text="我是昵称我是昵昵称我是昵我是昵昵称我"
+            android:textColor="@color/color333333"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintEnd_toStartOf="@id/img3"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toEndOf="@id/img_1"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/img3"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="@dimen/margin10"
+            android:layout_marginRight="10dp"
+            android:src="#00ff00"
+            app:layout_constraintLeft_toRightOf="@id/tv_name"
+            app:layout_constraintRight_toLeftOf="@+id/img_2"
+            app:layout_constraintTop_toTopOf="parent"></ImageView>
+
+
+        <ImageView
+            android:id="@+id/img_2"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginRight="@dimen/margin10"
+            android:src="#ffffff"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"></ImageView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <!--3. 常用条目1  右图片 下边有展示内容-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:layout_marginTop="120dp"
+        android:background="#09000000"
+        android:paddingLeft="@dimen/margin10"
+        android:paddingRight="@dimen/margin10"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/img_home_body"
+            android:layout_width="108dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/margin10"
+            android:layout_marginBottom="@dimen/margin10"
+            android:src="@color/color333333"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"></ImageView>
+
+        <TextView
+            android:id="@+id/tv_home_body"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin10"
+            android:lineSpacingMultiplier="1.3"
+            android:maxLines="2"
+            android:paddingRight="@dimen/margin22"
+            android:textColor="@color/color333333"
+            android:textSize="15sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/img_home_body"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="邰福寿：上市，一个计划是与远方的计划方adfadfadfadfad案" />
+        <!--简介-->
+        <TextView
+            android:id="@+id/view"
+            android:layout_width="0dp"
+            android:layout_height="5dp"
+            android:layout_marginBottom="@dimen/margin10"
+            android:alpha="0.2"
+            android:background="@drawable/shape_main_fragment_body_color"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="@+id/tv_home_brief_introduction"
+            app:layout_constraintRight_toRightOf="@+id/tv_home_brief_introduction"></TextView>
+
+        <TextView
+            android:id="@+id/tv_home_brief_introduction"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/margin10"
+            android:layout_marginBottom="@dimen/margin10"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:paddingLeft="@dimen/margin2"
+            android:paddingRight="@dimen/margin2"
+            android:singleLine="true"
+            android:textColor="#ffff5722"
+            android:textSize="11sp"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            tools:text="你想要的重点" />
+        <!--   数量     -->
+        <TextView
+            android:id="@+id/tv_home_num"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin10"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:textColor="#ff999999"
+            android:textSize="11sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@+id/tv_home_brief_introduction"
+            app:layout_constraintRight_toLeftOf="@+id/img_home_body"
+            tools:text="19.5万看过·345转发" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_5"
+            android:background="@color/color333333"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!--    4. 动态改变约束布局-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_bottom"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:background="#44000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:id="@+id/tv_bottom_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#ff5722"
+            android:text="按钮1"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"></TextView>
+
+        <TextView
+            android:id="@+id/tv_bottom_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#ff5722"
+            android:text="按钮f2"
+            app:layout_constraintHorizontal_bias="1"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"></TextView>
+
+        <TextView
+            android:id="@+id/tv_bottom_3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin10"
+            android:layout_marginRight="@dimen/margin10"
+            android:background="#ff5722"
+            android:text="中间按钮"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintLeft_toRightOf="@+id/tv_bottom_1"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"></TextView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
