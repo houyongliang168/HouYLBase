@@ -1,6 +1,5 @@
-package com.yongliang.houylbase;
+package com.yongliang.houylbase.utils;
 
-import android.app.Activity;
 import android.graphics.Color;
 import android.os.Build;
 import android.view.View;
@@ -46,4 +45,5 @@ public class Utils {
 
 
     }
+
 }

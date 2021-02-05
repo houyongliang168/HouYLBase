@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.yongliang.houylbase">
+
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -12,18 +13,24 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.HouYLBase">
         <activity
-            android:name=".constrantlayout.FullscreenActivity"
-            android:configChanges="orientation|keyboardHidden|screenSize"
-            android:label="@string/title_activity_fullscreen"
-            android:theme="@style/Theme.HouYLBase.Fullscreen"></activity>
-        <activity android:name=".constrantlayout.MotionLayoutActivity"></activity>
-        <activity android:name=".constrantlayout.ConstrantActivity"></activity>
-        <activity android:name=".MainActivity">
+            android:name=".WebviewActivity"
+            android:label="@string/title_activity_webview"
+            android:theme="@style/Theme.HouYLBase.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".constrantlayout.FullscreenActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/title_activity_fullscreen"
+            android:theme="@style/Theme.HouYLBase.Fullscreen" />
+        <activity android:name=".constrantlayout.MotionLayoutActivity" />
+        <activity android:name=".constrantlayout.ConstrantActivity" />
+        <activity android:name=".MainActivity">
+
         </activity>
     </application>
 

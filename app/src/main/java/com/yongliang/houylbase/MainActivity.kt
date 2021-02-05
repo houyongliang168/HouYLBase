@@ -3,17 +3,16 @@ package com.yongliang.houylbase
 //import TestBuildGradle
 import PresenterImageView
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.text.TextUtils
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.constraintlayout.widget.ConstraintLayout
 import com.bumptech.glide.Glide
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
@@ -21,18 +20,12 @@ import com.yongliang.houylbase.bean.NavbarBean
 import com.yongliang.houylbase.databinding.ActivityMainBinding
 import com.yongliang.houylbase.utils.DensityUtils
 import com.yongliang.houylbase.utils.JSONLocalTools
+import com.yongliang.houylbase.utils.Utils
 import com.yongliang.houylbase.utils.tabs.TabLayout
 import kotlinx.android.synthetic.main.activity_main.*
 
 
 class MainActivity : AppCompatActivity() {
-    //    val a = TestBuildGradle();
-    val p: PresenterImageView by lazy {
-        PresenterImageView(this)
-    };
-    lateinit var listBean: List<NavbarBean>
-    lateinit var binding: ActivityMainBinding
-    lateinit var viewsss: View
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater);
@@ -49,6 +42,13 @@ class MainActivity : AppCompatActivity() {
 
 
     }
+    //    val a = TestBuildGradle();
+    val p: PresenterImageView by lazy {
+        PresenterImageView(this)
+    };
+    lateinit var listBean: List<NavbarBean>
+    lateinit var binding: ActivityMainBinding
+    lateinit var viewsss: View
 
     private fun getDatas() {
         val json = JSONLocalTools.getJson("data.json", this)
@@ -70,35 +70,42 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun clickkk(view: View) {
-        binding.container.removeView(p.swImageView)
+//        binding.container.removeView(p.swImageView)
+        val intentt= Intent()
+
+        intentt.setClassName("com.yongliang.houylbase","com.yongliang.houylbase.constrantlayout.FullscreenActivity")
+        startActivity(intentt)
     }
 
 
     fun clickkkkk(view: View) {
 //        container.addView(p.swImageView,200,100)
-        viewsss = LayoutInflater.from(this).inflate(R.layout.page_error, null);
-        val ivLeftLayoutParams: ConstraintLayout.LayoutParams = ConstraintLayout.LayoutParams(
-            ViewGroup.LayoutParams.MATCH_PARENT,
-            ViewGroup.LayoutParams.MATCH_PARENT
-        )
-        ivLeftLayoutParams.leftToLeft = 0
-        ivLeftLayoutParams.rightToRight = 0
-        ivLeftLayoutParams.topToTop = 0
-        ivLeftLayoutParams.bottomToBottom = 0
+//        viewsss = LayoutInflater.from(this).inflate(R.layout.page_error, null);
+//        val ivLeftLayoutParams: ConstraintLayout.LayoutParams = ConstraintLayout.LayoutParams(
+//            ViewGroup.LayoutParams.MATCH_PARENT,
+//            ViewGroup.LayoutParams.MATCH_PARENT
+//        )
+//        ivLeftLayoutParams.leftToLeft = 0
+//        ivLeftLayoutParams.rightToRight = 0
+//        ivLeftLayoutParams.topToTop = 0
+//        ivLeftLayoutParams.bottomToBottom = 0
+//
+//        viewsss.layoutParams = ivLeftLayoutParams
+//
+//        viewsss.findViewById<ConstraintLayout>(R.id.cst_layout).setOnClickListener {
+//
+//            if (viewsss != null) {
+//                binding.constaintLayoutMain.removeView(viewsss);
+//            }
+//
+//        }
+//
+//        binding.constaintLayoutMain.addView(viewsss);
 
-        viewsss.layoutParams = ivLeftLayoutParams
+        val intentt= Intent()
 
-        viewsss.findViewById<ConstraintLayout>(R.id.cst_layout).setOnClickListener {
-
-            if (viewsss != null) {
-                binding.constaintLayoutMain.removeView(viewsss);
-            }
-
-        }
-
-        binding.constaintLayoutMain.addView(viewsss);
-
-
+        intentt.setClassName("com.yongliang.houylbase","com.yongliang.houylbase.constrantlayout.FullscreenActivity")
+        startActivity(intentt)
 //        binding.constaintLayoutMain.removeView(view);
     }
 
@@ -158,12 +165,16 @@ class MainActivity : AppCompatActivity() {
                 }
             }
 
-            override fun onTabUnselected(tab: TabLayout.Tab?) {}
-            override fun onTabReselected(tab: TabLayout.Tab?) {}
+            override fun onTabUnselected(tab: TabLayout.Tab?) {
+
+            }
+            override fun onTabReselected(tab: TabLayout.Tab?) {
+                Toast.makeText(this@MainActivity,"李经理卡激烈的甲方垃圾袋法拉第",Toast.LENGTH_SHORT).show()
+            }
         })
         // 设置OnTabChangeListener 需要在添加Tab之前，不然第一次不会回调onTabSelected()方法，
         binding.tabBottom.getSlidingTabIndicator().setClipChildren(false)
-//        binding.tabBottom.getSlidingTabIndicator().setClipToPadding(false)
+        binding.tabBottom.getSlidingTabIndicator().setClipToPadding(false)
         // 提供自定义的布局添加Tab
         binding.tabBottom.tabSelectedIndicator
         for (i in listBean.indices) {
