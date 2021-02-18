@@ -1,42 +1,7 @@
-plugins {
-    id 'com.android.application'
-    id 'kotlin-android'
-    id 'kotlin-android-extensions'
-//    id 'kotlin-parcelize'
-//    id 'androidx.navigation.safeargs'
-}
+apply from: "../module.build.gradle"
+
 
 android {
-    compileSdkVersion 30
-    buildToolsVersion "30.0.0"
-
-    defaultConfig {
-        applicationId "com.yongliang.houylbase"
-        minSdkVersion 21
-        targetSdkVersion 30
-        versionCode 1
-        versionName "1.0"
-
-        testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
-    }
-//    jackOptions {
-//        enabled true
-//    }
-    dataBinding {
-        enabled = true
-    }
-    buildTypes {
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-        }
-//        debug {
-//            release {
-//                minifyEnabled false
-//                proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-//            }
-//        }
-    }
     sourceSets{
 
 //      思考： 这种方式与 引用module 的方式，哪种更好？
@@ -93,7 +58,6 @@ android {
 //    }
 }
     dependencies {
-        implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
         implementation 'androidx.appcompat:appcompat:1.2.0'
         implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
 //        navigation
@@ -108,7 +72,7 @@ android {
 
         implementation 'com.google.code.gson:gson:2.8.6'
 //        SafeArgs
-//        classpath "androidx.navigation:navigation-safe-args-gradle-plugin:$navigationVersion"
+//        implementation "androidx.navigation:navigation-safe-args-gradle-plugin:$navigationVersion"
 
         //吐司兼容7.0 版本 两种方案
         implementation 'com.github.Dovar66:DToast:1.1.6'

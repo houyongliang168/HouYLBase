@@ -1,0 +1,112 @@
+//if (isBuildModule.toBoolean()) {
+//    //作为独立App应用运行
+//    apply plugin: 'com.android.application'
+//} else {
+//    //作为组件运行
+//    apply plugin: 'com.android.library'
+//}
+def cfg = rootProject.ext.androidConfig
+def appId = rootProject.ext.appId
+def ver = rootProject.ext.moduleVersion
+//plugins {
+//    id 'com.android.application'
+//    id 'kotlin-android'
+//    id 'kotlin-android-extensions'
+////    id 'kotlin-parcelize'
+////    id 'androidx.navigation.safeargs'
+//
+//}
+
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+android {
+    compileSdkVersion cfg.compileSdkVersion
+    buildToolsVersion cfg.buildToolsVersion
+
+    defaultConfig {
+        applicationId appId[project.name]
+        minSdkVersion cfg.minSdkVersion
+        targetSdkVersion cfg.targetSdkVersion
+        versionCode ver.versionCode
+        versionName ver.versionName
+//        multiDexEnabled true//设置 方法数量超 65535
+        manifestPlaceholders.put("PLUGIN_NAME", project.name)
+        manifestPlaceholders.put("PLUGIN_VALUE", versionCode)
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    dataBinding {
+        enabled = true
+    }
+    lintOptions {
+        checkReleaseBuilds false
+        // Or, if you prefer, you can continue to check for errors in release builds,
+        // but continue the build even when errors are found:
+        abortOnError false
+    }
+
+    dexOptions {
+        jumboMode = true
+    }
+
+//    signingConfigs {
+//        debug {
+//            v1SigningEnabled true
+//            v2SigningEnabled true
+//            //获取keystore 里面相关信息
+//            def keystoreProFile = rootProject.file("keystore.properties")
+//            def keystoreProes = new Properties()
+//            keystoreProes.load(new FileInputStream(keystoreProFile))
+//
+//            keyAlias keystoreProes["keyAlias"]
+//            keyPassword keystoreProes["storePassword"]
+//            storeFile file(keystoreProes['keystore'])
+//            storePassword keystoreProes["keyPassword"]
+//        }
+//        release {
+//            v1SigningEnabled true
+//            v2SigningEnabled true
+//            //获取keystore 里面相关信息
+//            def keystoreProFile = rootProject.file("keystore.properties")
+//            def keystoreProes = new Properties()
+//            keystoreProes.load(new FileInputStream(keystoreProFile))
+//
+//            keyAlias keystoreProes["keyAlias"]
+//            keyPassword keystoreProes["storePassword"]
+//            storeFile file(keystoreProes['keystore'])
+//            storePassword keystoreProes["keyPassword"]
+//        }
+//    }
+
+    buildTypes {
+        release {
+            debuggable true
+            minifyEnabled false
+            shrinkResources false
+//            signingConfig signingConfigs.release
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+
+        }
+
+//        debug {
+//            debuggable true
+//            minifyEnabled false
+//            shrinkResources false
+////            signingConfig signingConfigs.debug
+//            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+
+//        }
+    }
+
+//    android.applicationVariants.all { variant ->
+//        variant.outputs.all {
+//            outputFileName = "${project.name}_${variant.buildType.name}" +
+//                    "_v${defaultConfig.versionCode}" +
+//                    "_${new Date().format("yyyy-MM-dd_HH-mm-ss", TimeZone.getTimeZone("GMT+08:00"))}" +
+//                    ".apk"
+//        }
+//    }
+
+}
+
+
