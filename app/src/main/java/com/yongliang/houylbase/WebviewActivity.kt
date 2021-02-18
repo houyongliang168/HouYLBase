@@ -9,7 +9,6 @@ import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.content_webview.*
-import java.io.File
 
 class WebviewActivity : AppCompatActivity() {
     val url = "https://www.baidu.com"

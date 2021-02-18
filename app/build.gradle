@@ -38,24 +38,30 @@ android {
 //        }
     }
     sourceSets{
+
+//      思考： 这种方式与 引用module 的方式，哪种更好？
+//      这两种方式粒度不一样，这是对 mudule 的补充，作目录分离；
+//      module 可能是 对这种模式的再处理；该模式可以共用一个 buildgradle, module 形式可能会有多种库，有冲突；
+//      module 可以互相引用，采用下面这种方式不可以； 这可以看做是对 目录的分离；将目录与目录之间分开； 粒度比module 小，可以作为对module 的补充。
         main{
-//            这样可以将不同功能的代码隔离，方便删除
-            res.srcDirs = ['firstPage/res1','src/main/res1','src/main/res']
-            java.srcDirs=['src/main/java','src/main/java_firstpage','firstPage/java']
+//       这样可以将不同功能的代码隔离，方便删除
+            res.srcDirs = ['zfunctionOne/res','src/main/res1','src/main/res','src/common_bitmap/res'
+                           ,'src/common_cipher/res','src/common_download/res','src/common_network/res'
+                           ,'src/common_optimize/res','src/common_phone_adpter/res','src/common_webview/res'
+                           ,'src/common_weight/res']
+            java.srcDirs=['src/main/java','src/main/java_firstpage','zfunctionOne/main/java','src/main/common_bitmap'
+            ,'src/main/common_cipher','src/main/common_download','src/main/common_network','src/main/common_optimize'
+            ,'src/main/common_phone_adpter','src/main/common_webview','src/main/common_weight']
         }
 
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
     }
 //    compileOptions {
 //        sourceCompatibility JavaVersion.VERSION_1_8
 //        targetCompatibility JavaVersion.VERSION_1_8
 //    }
-    kotlinOptions {
-        jvmTarget = '1.8'
-    }
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
-    }
 //    flavorDimensions("typeFunction")
 //
 //    productFlavors {
