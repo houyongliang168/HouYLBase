@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <paths>
+        <external-path
+            name="myImages"
+            path="/"></external-path>
+        <root-path
+            name="images"
+            path=""></root-path>
+        <external-path name="external_files" path="."/>
+    </paths>
+</resources>

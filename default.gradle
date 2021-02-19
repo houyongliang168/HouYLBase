@@ -1,10 +1,10 @@
 ext {
 //    固定配置，一个app 配置后一般 不怎么变动
     androidConfig = [
-            "compileSdkVersion": 26,
-            "minSdkVersion"    : 17,
-            "targetSdkVersion" : 23,
-            "buildToolsVersion":"26.0.2"
+            "compileSdkVersion": 30,
+            "minSdkVersion"    : 21,
+            "targetSdkVersion" :  30,
+            "buildToolsVersion":"30.0.0"
     ]
 
     appId = [

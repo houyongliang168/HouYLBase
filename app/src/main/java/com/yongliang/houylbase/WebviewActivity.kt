@@ -54,8 +54,8 @@ class WebviewActivity : AppCompatActivity() {
         webview.setWebChromeClient(WebChromeClient())
 
         val ws: WebSettings = webview.getSettings()
-        //定义泰行销app的UserAgent
-        //定义泰行销app的UserAgent
+        //定义app的UserAgent
+        //定义app的UserAgent
         ws.setUserAgentString("houyongliang")
         // 防止个人敏感数据泄漏
         // 防止个人敏感数据泄漏

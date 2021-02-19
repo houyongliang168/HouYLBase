@@ -1,2 +1,8 @@
+include ':downloadModule'
+include ':downloadSDK'
+include ':widgetStore'
+include ':bitmapSDK'
+include ':netSDK'
+include ':baseLib'
 include ':app'
 rootProject.name = "HouYLBase"

@@ -2,6 +2,7 @@ package com.yongliang.houylbase;
 
 import android.annotation.SuppressLint;
 
+import com.yongliang.houylbase.utils.AESEncryptUtil;
 import com.yongliang.houylbase.utils.Base64Encoder;
 
 import org.apache.commons.codec.binary.Base64;
