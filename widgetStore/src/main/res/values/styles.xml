@@ -15,4 +15,19 @@
     <style name="AppTheme" parent="@style/BaseAppTheme"></style>
 
 
+    <style name="TRM_ANIM_STYLE">
+        <item name="android:windowEnterAnimation">@anim/basemodule_ppw_menu_fade_in</item>
+        <item name="android:windowExitAnimation">@anim/basenodule_ppw_menu_fade_out</item>
+    </style>
+
+    <!-- 自定义Dialog主题 -->
+    <style name="BottomDialogStyle" parent="@android:style/Theme.Dialog">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@android:color/white</item>
+        <item name="android:windowAnimationStyle">@style/TRM_ANIM_STYLE</item>
+    </style>
+    <style name="transparentFrameWindowStyle" parent="android:style/Theme.Dialog">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@drawable/photo_choose_bg</item>
+    </style>
 </resources>

@@ -11,11 +11,11 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.txx.app.play.R;
-import com.txx.app.play.commom.time_picker.lib.WheelView;
-import com.txx.app.play.commom.time_picker.listener.CustomListener;
-import com.txx.app.play.commom.time_picker.listener.OnDateSelectedListener;
-import com.txx.app.play.commom.time_picker.view.WheelTime;
+import com.time_picker.lib.WheelView;
+import com.time_picker.listener.CustomListener;
+import com.time_picker.listener.OnDateSelectedListener;
+import com.time_picker.view.WheelTime;
+import com.yongliang.widgetstore.R;
 
 import java.text.ParseException;
 import java.util.Calendar;

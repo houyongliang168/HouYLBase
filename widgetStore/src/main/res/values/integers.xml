@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <integer name="renewal_attendance_calendar_day_text_size">12</integer>
+    <integer name="renewal_attendance_calendar_state_text_size">9</integer>
+    <integer name="renewal_attendance_calendar_state_sale_text_size">10</integer>
+    <integer name="qutuo_red_circle_size">8</integer>
+</resources>

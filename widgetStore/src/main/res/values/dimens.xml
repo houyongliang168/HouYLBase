@@ -1,4 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="dimen_20dp">20dp</dimen>
+    <dimen name="dimen_5dp">5sp</dimen>
+    <dimen name="dimen_40dp">40sp</dimen>
+    <dimen name="margin10">10dp</dimen>
+    <dimen name="dimen_180dp">180dp</dimen>
+    <dimen name="act_dimen_36dp">36dp</dimen>
+    <dimen name="margin15">15dp</dimen>
+    <dimen name="dimen_36dp">36dp</dimen>
+    <dimen name="text18">18sp</dimen>
+    <dimen name="margin8">8dp</dimen>
+    <dimen name="margin12">12dp</dimen>
+    <dimen name="dimen_34dp">34dp</dimen>
+    <dimen name="dimen_15dp">15dp</dimen>
+    <dimen name="text15">15sp</dimen>
+    <dimen name="dimen_1dp">1dp</dimen>
+    <dimen name="dimen_12dp">12dp</dimen>
+    <dimen name="margin11">11dp</dimen>
+    <dimen name="text13">13sp</dimen>
+    <dimen name="margin4">4dp</dimen>
+    <dimen name="margin44">44dp</dimen>
+    <dimen name="text16">16sp</dimen>
 </resources>

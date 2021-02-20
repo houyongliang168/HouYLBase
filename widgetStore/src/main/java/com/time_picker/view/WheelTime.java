@@ -2,11 +2,12 @@ package com.time_picker.view;
 
 import android.view.View;
 
-import com.txx.app.play.R;
-import com.txx.app.play.commom.time_picker.adapter.NumericWheelAdapter;
-import com.txx.app.play.commom.time_picker.lib.WheelView;
-import com.txx.app.play.commom.time_picker.listener.OnDateSelectedListener;
-import com.txx.app.play.commom.time_picker.listener.OnItemSelectedListener;
+
+import com.time_picker.adapter.NumericWheelAdapter;
+import com.time_picker.lib.WheelView;
+import com.time_picker.listener.OnDateSelectedListener;
+import com.time_picker.listener.OnItemSelectedListener;
+import com.yongliang.widgetstore.R;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;

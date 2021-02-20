@@ -5,4 +5,13 @@
     <color name="colorAccent">#FF4081</color>
     <color name="colorBar">#ff5722</color>
     <color name="colorLine">#eeeeee</color>
+    <color name="color80000000">#80000000</color>
+    <color name="colorffffff">#ffffff</color>
+    <color name="color333333">#333333</color>
+    <color name="coloreeeeee">#eeeeee</color>
+    <color name="colorfe5722">#fe5722</color>
+    <color name="colorff5722">#ff5722</color>
+    <color name="color999999">#999999</color>
+    <color name="color666666">#666666</color>
+    <color name="colorcacaca">#cacaca</color>
 </resources>

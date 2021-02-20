@@ -72,5 +72,16 @@
         <item name="android:windowBackground">@android:color/transparent</item>
         <item name="android:backgroundDimEnabled">false</item>
     </style>
+<!-- 可移动的view -->
+    <declare-styleable name="SWImageView">
+        <attr name="borderRadius" format="dimension"/>
+        <attr name="type">
+            <enum name="normal" value="-1"/>
+            <enum name="circle" value="0"/>
+            <enum name="round" value="1"/>
+        </attr>
+        <attr name="borderWidth" format="dimension" />
+        <attr name="borderColor" format="integer" />
+    </declare-styleable>
 
 </resources>
