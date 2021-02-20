@@ -1,3 +1,4 @@
+include ':cipherSDK'
 include ':downloadModule'
 include ':downloadSDK'
 include ':widgetStore'

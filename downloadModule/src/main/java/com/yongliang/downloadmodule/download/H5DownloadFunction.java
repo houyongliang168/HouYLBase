@@ -248,9 +248,9 @@ public class H5DownloadFunction  {
         String filePath;
         if (!Environment.getExternalStorageState ().equals (Environment.MEDIA_MOUNTED)) {//无sd 卡
             //无SD 卡  存储在应用下面
-            filePath = context.getFilesDir () + File.separator + "com.taikanglife.isalessystem" + File.separatorChar;
+            filePath = context.getFilesDir () + File.separator + "houyongliang" + File.separatorChar;
         } else {//有sd 卡
-            filePath = Environment.getExternalStorageDirectory ().getAbsolutePath () + File.separatorChar + "com.taikanglife.isalessystem" + File.separatorChar;
+            filePath = Environment.getExternalStorageDirectory ().getAbsolutePath () + File.separatorChar + "houyongliang" + File.separatorChar;
         }
         File folder = new File(filePath);
         if (!folder.exists ()) {

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
+<!--圆形进度条-->
     <declare-styleable name="CircleProgressView">
         <!--画笔宽度-->
         <attr name="progress_paint_width" format="dimension" />
@@ -18,5 +18,59 @@
             <enum name="bottom" value="4" />
         </attr>
     </declare-styleable>
+<!--走马灯-->
+    <declare-styleable name="MarqueeView">
+        <attr name="marqueeview_repet_type" format="enum">
+            <enum name="repet_oncetime" value="0"/><!-- 播放一次 -->
+            <enum name="repet_interval" value="1"/>  <!--连续播放 循环结束再继续下次循环-->
+            <enum name="repet_continuous" value="2"/>  <!--连续播放 到末尾直接继续下次循环-->
+        </attr><!--循环模式-->
+        <attr name="marqueeview_text_distance" format="integer"/><!--每个item之间的距离-->
+        <attr name="marqueeview_text_startlocationdistance" format="float"/><!--开始的起始位置 按距离控件左边的百分比 0~1之间 -->
+        <attr name="marqueeview_text_speed" format="float"/><!--播放速度 也就是文字滚动速度-->
+        <attr name="marqueeview_text_color" format="color|reference"/><!-- 文字颜色 -->
+        <attr name="marqueeview_text_size" format="float"/><!-- 文字大小 -->
+        <attr name="marqueeview_isclickalbe_stop" format="boolean"/><!--是否点击暂停-->
+        <attr name="marqueeview_is_resetLocation" format="boolean"/><!--重新改变内容的时候 ， 是否初始化 位置，默认为true，改变-->
+    </declare-styleable>
+<!--    进入离开动画-->
+    <style name="CodeAnim">
+        <item name="android:windowEnterAnimation">@anim/ppw_qr_code_fade_in</item>
+        <item name="android:windowExitAnimation">@anim/ppw_qr_code_fade_out</item>
+    </style>
+<!--滚动日历-->
+    <declare-styleable name="pickerview"><attr name="pickerview_gravity">
+        <enum name="center" value="17"/>
+        <enum name="left" value="3"/>
+        <enum name="right" value="5"/>
+    </attr><attr format="dimension" name="pickerview_textSize"/><attr format="color" name="pickerview_textColorOut"/><attr format="color" name="pickerview_textColorCenter"/><attr format="color" name="pickerview_dividerColor"/><attr format="float" name="pickerview_lineSpacingMultiplier"/></declare-styleable>
+
+    <style name="custom_dialog2" parent="@android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <!-- Dialog的windowFrame框为无 -->
+        <item name="android:windowIsFloating">true</item>
+        <!-- 是否漂现在activity上 -->
+        <item name="android:windowIsTranslucent">true</item>
+        <!-- 是否半透明 -->
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:background">@null</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <!-- 去除黑色边框的关键设置项 -->
+        <item name="android:backgroundDimEnabled">true</item>
+        <!-- 屏幕背景是否变暗 -->
+        <item name="android:backgroundDimAmount">0.3</item>
+    </style>
+
+    <!-- H5 dialog theme -->
+    <style name="dialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">false</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:backgroundDimEnabled">false</item>
+    </style>
 
 </resources>

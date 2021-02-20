@@ -17,7 +17,7 @@ import java.util.List;
  * Created by ixuea(http://a.ixuea.com/3) on 15/01/2017.
  */
 
-public class DownloadInfo implements Serializable {
+public class DownloadInfo extends ClickBaseBean implements Serializable {
 
     /**
      *

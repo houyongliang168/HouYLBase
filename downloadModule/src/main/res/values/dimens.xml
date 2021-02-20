@@ -4,4 +4,13 @@
     <dimen name="sp16">16sp</dimen>
     <dimen name="dimen_16dp">16dp</dimen>
     <dimen name="sp14">14sp</dimen>
+    <dimen name="margin15">15dp</dimen>
+    <dimen name="margin10">10dp</dimen>
+    <dimen name="margin8">8dp</dimen>
+    <dimen name="text15">15sp</dimen>
+    <dimen name="text18">18sp</dimen>
+    <dimen name="text12">12sp</dimen>
+    <dimen name="text20">20sp</dimen>
+    <dimen name="text17">17sp</dimen>
+    <dimen name="text16">16sp</dimen>
 </resources>

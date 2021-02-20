@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f7f7f7"
+    android:clipToPadding="true"
+    android:fitsSystemWindows="true"
+    android:gravity="bottom"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tv_camera"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:background="#ffffff"
+        android:gravity="center"
+        android:text="拍照"
+        android:textColor="@drawable/selector_popwin_itemcolor"
+        android:textSize="14sp" />
+
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="#333333" />
+
+    <TextView
+        android:id="@+id/tv_change_photo"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:background="#ffffff"
+        android:gravity="center"
+        android:text="从手机相册中选泽"
+        android:textColor="@drawable/selector_popwin_itemcolor"
+        android:textSize="14sp" />
+
+
+
+
+</LinearLayout>
