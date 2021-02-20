@@ -31,8 +31,9 @@
             android:layout_height="match_parent"
             android:paddingRight="14dp"
             android:button="@drawable/cache_edit_selector"
-            android:checked="@{downInfo.isSelected==0}"
-            android:visibility="@{isEdit?View.VISIBLE:View.GONE}" />
+           />
+<!--        android:checked="@{downInfo.isSelected==0}"-->
+<!--        android:visibility="@{isEdit?View.VISIBLE:View.GONE}"-->
 
         <ImageView
             android:id="@+id/iv_done_image"
@@ -40,8 +41,9 @@
             android:layout_height="76dp"
             android:scaleType="fitXY"
             android:src="@mipmap/ic_launcher"
-            app:imageUrl="@{downInfo.imgUrl}"
+
            />
+<!--        app:imageUrl="@{downInfo.imgUrl}"-->
         <!--app:placeHolder="@mipmap/iv_error"-->
         <!--app:error="@mipmap/iv_error"-->
         <LinearLayout

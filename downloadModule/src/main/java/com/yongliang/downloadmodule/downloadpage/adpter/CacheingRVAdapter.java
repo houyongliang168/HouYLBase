@@ -28,7 +28,6 @@ import org.greenrobot.eventbus.EventBus;
 
 import java.lang.ref.SoftReference;
 
-import static com.download.core.domain.DownloadInfo.STATUS_REMOVED;
 
 
 /**
@@ -87,7 +86,8 @@ public class CacheingRVAdapter extends RecyclerView.Adapter<CacheingRVAdapter.Vi
 
     @Override
     public ViewHolder2 onCreateViewHolder(ViewGroup parent, int viewType) {
-        ItemCacheDoingBinding binding= DataBindingUtil.inflate(LayoutInflater.from(parent.getContext()),R.layout.item_cache_doing,parent,false);
+      View view=  LayoutInflater.from(parent.getContext()).inflate(R.layout.item_cache_doing,parent,false);
+        ItemCacheDoingBinding binding= DataBindingUtil.bind(view);
         return new ViewHolder2(binding);
     }
 
@@ -400,7 +400,7 @@ public class CacheingRVAdapter extends RecyclerView.Adapter<CacheingRVAdapter.Vi
                     });
                     EventBus.getDefault().post(new DownloadStatusChange());
                     break;
-                case STATUS_REMOVED:
+                case DownloadInfo.STATUS_REMOVED:
 
 //                    CacheingRVAdapter. this. notifyItemRemoved(possion);
 //                    notifyItemRangeChanged(possion, mList.size());

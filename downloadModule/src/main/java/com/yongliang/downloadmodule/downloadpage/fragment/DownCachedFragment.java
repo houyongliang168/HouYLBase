@@ -246,7 +246,7 @@ public class DownCachedFragment extends CoreBaseFragment<DownFinishedFragmentPre
             activity.setEditStatus(mIsEdit);
         }
     }
-    
+
     @Override
     public void onDestroy() {
         super.onDestroy();
@@ -255,7 +255,7 @@ public class DownCachedFragment extends CoreBaseFragment<DownFinishedFragmentPre
             ((DownCacheActivity) activity).removeEditStatusChangeListener(this);
         }
     }
-  
+
     @Override
     public void showDeleteDialog() {
         if(deletDialog==null){
