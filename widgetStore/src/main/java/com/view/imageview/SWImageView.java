@@ -1,4 +1,4 @@
-package com.view.moveview;
+package com.view.imageview;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -24,7 +24,7 @@ import com.yongliang.widgetstore.R;
 
 
 /**
- * 可移动的view
+ * 圆形图形控件
  * Created by 41113 on 2018/12/5.
  */
 

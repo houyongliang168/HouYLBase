@@ -1,4 +1,4 @@
-package com.yongliang.ciphersdk.base64;
+package base64;
 
 public final class Base64 {
 
