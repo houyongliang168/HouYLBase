@@ -1,4 +1,4 @@
-package com.databinding;
+package mvvm.view.image;
 
 import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
@@ -16,7 +16,7 @@ public class ImageViewBingAttrAdapter {
     }
 
     @BindingAdapter("android:src")
-    public static void setSrc(ImageView view, int resId) {
+    public static void setSrc(ImageView view,  int resId) {
         view.setImageResource(resId);
     }
 

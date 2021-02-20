@@ -1,14 +1,15 @@
 package com.view.recyclerview.adpter;
 
 import android.content.Context;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.txx.app.qutuo.R;
-import com.txx.app.qutuo.framework.Bean.StringAndBooleanBean;
+
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.yongliang.widgetstore.R;
 
 import java.util.List;
 
@@ -17,7 +18,7 @@ import java.util.List;
  * Function(功能):
  */
 
-public class StringBetterAdapter extends RecyclerView.Adapter<com.txx.app.qutuo.app.weight.recycler.StringBetterAdapter.ViewHolder> {
+public class StringBetterAdapter extends RecyclerView.Adapter<StringBetterAdapter.ViewHolder> {
     private List<StringAndBooleanBean> list;//该集合默认为 false
     private Context mContext;
     private List<String> oldList;
@@ -45,7 +46,7 @@ public class StringBetterAdapter extends RecyclerView.Adapter<com.txx.app.qutuo.
         holder.itemView.setClickable(true);
         if (list.get(position).isChoosed()) {
             holder.tv_label.setBackgroundResource(R.drawable.basemodule_shape_bg_flow_recyclerview_filter_checked);
-            holder.tv_label.setTextColor(mContext.getResources().getColor(R.color.colorWhite));
+            holder.tv_label.setTextColor(mContext.getResources().getColor(R.color.colorffffff));
 
         } else {
             holder.tv_label.setBackgroundResource(R.drawable.basemodule_shape_bg_flow_recyclerview_filter_unchecked);
@@ -60,7 +61,7 @@ public class StringBetterAdapter extends RecyclerView.Adapter<com.txx.app.qutuo.
                 list.get(position).setChoosed(isChecked);
                 if (isChecked) {
                     holder.tv_label.setBackgroundResource(R.drawable.basemodule_shape_bg_flow_recyclerview_filter_checked);
-                    holder.tv_label.setTextColor(mContext.getResources().getColor(R.color.colorWhite));
+                    holder.tv_label.setTextColor(mContext.getResources().getColor(R.color.colorffffff));
                 } else {
                     holder.tv_label.setBackgroundResource(R.drawable.basemodule_shape_bg_flow_recyclerview_filter_unchecked);
                     holder.tv_label.setTextColor(mContext.getResources().getColor(R.color.color999999));
