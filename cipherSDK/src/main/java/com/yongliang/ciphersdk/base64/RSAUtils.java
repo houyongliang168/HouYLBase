@@ -54,8 +54,7 @@ public class RSAUtils {
      */
     public static final String PRIVATE_KEY = "_RSA_PRIKEY";
 
-    public  static String clientKey="MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAqNU6h1q25/ja+47xd/sAs9VeJehB5KeC3vRc/wEIgD1ZS7krOq4gGNdQ2LfkXDPTPEa+zSgL0dCxX1EcA3rrOMPFVaGho+3cu/eruk0u7vfEV2qSyxfn+eeu5A3i3IvoOXJ+E3AqQglWsfq8YhH/ZH81CTbAnEcivk4AulSYumuhB5nJ9jjlJbqTvxCrOB6+NnL2IT4U0JZAW9/FYkSnxFI/YAu1u89/ziqugY2hN8NpczKdFBP" +
-            "ihV113TjgRrYUOGnLQ9nxOAgHx5sHaZL/I5uv+yelZwPdtsTIsbAS4ab2wV4J0RK+IWdYEpzOgDnM0OZqPvKDKoktjGW8vHEBcwIDAQAB";
+    public  static String clientKey="tyutuy";
     /**
      * RSA算法规定：待加密的字节数不能超过密钥的长度值除以8再减去11。
      * 而加密后得到密文的字节数，正好是密钥的长度值除以 8。

@@ -10,9 +10,7 @@ import javax.crypto.KeyGenerator;
 import javax.crypto.SecretKey;
 import javax.crypto.spec.SecretKeySpec;
 
-/**
- * Created by liuyang249 on 2019/8/8.
- */
+
 
 /**
  * @author Administrator
