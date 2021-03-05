@@ -8,4 +8,11 @@
     <style name="Theme.HouYLBase.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="Theme.HouYLBase.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+    <style name="LaunchTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- 设置背景图片 -->
+        <item name="android:windowBackground">@mipmap/ic_launcher</item>
+        <!-- 设置全屏 -->
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
 </resources>

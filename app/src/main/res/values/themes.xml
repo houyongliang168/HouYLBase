@@ -19,4 +19,13 @@
         <item name="fullscreenBackgroundColor">@color/light_blue_600</item>
         <item name="fullscreenTextColor">@color/light_blue_A200</item>
     </style>
+
+    <!-- 1.自定义主题 -->
+    <style name="AppTheme.LaunchTheme" parent="Theme.HouYLBase.NoActionBar">
+        <!-- 设置背景图片 -->
+        <item name="android:windowBackground">@drawable/basemodule_div</item>
+        <!-- 设置全屏 -->
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
 </resources>

@@ -43,9 +43,9 @@ class MainActivity : AppCompatActivity() {
 
     }
     //    val a = TestBuildGradle();
-    val p: PresenterImageView by lazy {
-        PresenterImageView(this)
-    };
+//    val p: PresenterImageView by lazy {
+//        PresenterImageView(this)
+//    };
     lateinit var listBean: List<NavbarBean>
     lateinit var binding: ActivityMainBinding
     lateinit var viewsss: View

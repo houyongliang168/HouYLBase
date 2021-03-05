@@ -4,18 +4,29 @@ import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.os.Build
 import android.os.Bundle
+import android.view.ViewTreeObserver
 import android.webkit.*
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.snackbar.Snackbar
+import com.yongliang.houylbase.hilt.Truck
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.content_webview.*
+import launch.launchstarter.time.LauncheTimer
+import javax.inject.Inject
 
+// 注入点
+@AndroidEntryPoint
 class WebviewActivity : AppCompatActivity() {
+    @Inject
+    lateinit var truck: Truck
     val url = "https://www.baidu.com"
-
+   var mHasRecorded=false
     override fun onCreate(savedInstanceState: Bundle?) {
+        setTheme(R.style.LaunchTheme)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_webview)
+        truck.deliver()
         setSupportActionBar(findViewById(R.id.toolbar))
 
         findViewById<FloatingActionButton>(R.id.fab).setOnClickListener { view ->
@@ -23,10 +34,24 @@ class WebviewActivity : AppCompatActivity() {
             Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                 .setAction("Action", null).show()
         }
-
+//        measureAATime()
         initwebview()
         webview.loadUrl(url)
 
+    }
+
+    private fun measureAATime() {
+        if (!mHasRecorded) {
+            mHasRecorded = true
+            webview.getViewTreeObserver()
+                .addOnPreDrawListener(object : ViewTreeObserver.OnPreDrawListener {
+                    override fun onPreDraw(): Boolean {
+                        webview.getViewTreeObserver().removeOnPreDrawListener(this)
+                        LauncheTimer.endRecord("FeedShow")
+                        return true
+                    }
+                })
+        }
     }
 
     private fun initwebview() {

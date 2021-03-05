@@ -20,6 +20,9 @@ def ver = rootProject.ext.moduleVersion
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'dagger.hilt.android.plugin'
+//apply plugin: 'android-aspectjx'
 android {
     compileSdkVersion cfg.compileSdkVersion
     buildToolsVersion cfg.buildToolsVersion
@@ -35,8 +38,13 @@ android {
         manifestPlaceholders.put("PLUGIN_VALUE", versionCode)
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
-    dataBinding {
-        enabled = true
+//    dataBinding {
+//        enabled = true
+//    }
+    buildFeatures{
+        dataBinding = true
+        // for view binding :
+        // viewBinding = true
     }
     lintOptions {
         checkReleaseBuilds false
@@ -48,7 +56,10 @@ android {
     dexOptions {
         jumboMode = true
     }
-
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
 //    signingConfigs {
 //        debug {
 //            v1SigningEnabled true
@@ -88,14 +99,14 @@ android {
 
         }
 
-//        debug {
-//            debuggable true
-//            minifyEnabled false
-//            shrinkResources false
-////            signingConfig signingConfigs.debug
-//            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        debug {
+            debuggable true
+            minifyEnabled false
+            shrinkResources false
+//            signingConfig signingConfigs.debug
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
 
-//        }
+        }
     }
 
 //    android.applicationVariants.all { variant ->
@@ -108,5 +119,4 @@ android {
 //    }
 
 }
-
 
