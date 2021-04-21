@@ -214,7 +214,6 @@ public class CrashHandler implements Thread.UncaughtExceptionHandler {
             public void run() {
                 Looper.prepare();
 //                Toast.makeText(mContext, "日志已经很大了,应该上传服务器", Toast.LENGTH_LONG).show();
-                MyLog.wtf("taixingxiao","日志已经很大了,应该上传服务器");
                 Looper.loop();
             }
         }.start();

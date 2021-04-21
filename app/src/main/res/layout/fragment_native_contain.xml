@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:bind="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fl_frag_contain"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+<!--    <fragment-->
+<!--        android:id="@+id/frag_base"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:name="com.txx.app.main.modules.nativeconfig.weight.recyclerview.NavRecyFragment"></fragment>-->
+
+</FrameLayout>

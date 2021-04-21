@@ -1,6 +1,7 @@
 package com.yongliang.houylbase
 
 import android.graphics.Color
+import android.graphics.drawable.AnimatedVectorDrawable
 import android.graphics.drawable.ColorDrawable
 import android.os.Build
 import android.os.Bundle
@@ -8,12 +9,14 @@ import android.view.ViewTreeObserver
 import android.webkit.*
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.floatingactionbutton.FloatingActionButton
-import com.google.android.material.snackbar.Snackbar
 import com.yongliang.houylbase.hilt.Truck
+import common_animation.drawable_animation.DrawableAnimationUtils.getAnimationDrawable
+import common_animation.drawable_animation.DrawableAnimationUtils.unzipFileFromAssets
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.content_webview.*
 import launch.launchstarter.time.LauncheTimer
 import javax.inject.Inject
+
 
 // 注入点
 @AndroidEntryPoint
@@ -22,6 +25,7 @@ class WebviewActivity : AppCompatActivity() {
     lateinit var truck: Truck
     val url = "https://www.baidu.com"
    var mHasRecorded=false
+    val  ss=SecondFragment()
     override fun onCreate(savedInstanceState: Bundle?) {
         setTheme(R.style.LaunchTheme)
         super.onCreate(savedInstanceState)
@@ -30,9 +34,35 @@ class WebviewActivity : AppCompatActivity() {
         setSupportActionBar(findViewById(R.id.toolbar))
 
         findViewById<FloatingActionButton>(R.id.fab).setOnClickListener { view ->
-            clearHistory()
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show()
+//            clearHistory()
+//            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+//                .setAction("Action", null).show()
+
+            val  s1=ThreeFragment()
+
+            ss.addView(ll_contain,supportFragmentManager);
+            s1.addView(ll_contain,supportFragmentManager);
+//            ss.addView(ll_contain);
+
+
+//            /*帧动画处理 不容易实现*/
+//            unzipFileFromAssets(applicationContext, "aaa.zip", "myname/animation")
+//           val animation= getAnimationDrawable("myname/animation", applicationContext, 50);
+//            img4.setBackgroundDrawable(animation)
+//            animation?.start()
+//
+//            /*矢量动画*/
+////            img5
+//            val animatedVectorDrawable =img5.getDrawable() as AnimatedVectorDrawable
+//            if (animatedVectorDrawable.isRunning) {
+//                animatedVectorDrawable.stop()
+//            } else {
+//                animatedVectorDrawable.start()
+//            }
+
+        }
+        img4.setOnClickListener {
+            ss.remove(ll_contain)
         }
 //        measureAATime()
         initwebview()

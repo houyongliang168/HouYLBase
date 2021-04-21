@@ -30,4 +30,11 @@
         <item name="android:windowNoTitle">true</item>
         <item name="android:windowBackground">@drawable/photo_choose_bg</item>
     </style>
+
+
+    <declare-styleable name="easy_flip_view">
+        <attr name="flipOnTouch" format="boolean"/>
+        <attr name="flipDuration" format="integer"/>
+        <attr name="flipEnabled" format="boolean"/>
+    </declare-styleable>
 </resources>

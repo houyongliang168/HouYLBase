@@ -22,6 +22,7 @@ public class MVVMBaseFragment extends RxFragment {
     private Dialog dialog;
     private Activity activity;
     private MyDialog meDialog;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         activity = this.getActivity();

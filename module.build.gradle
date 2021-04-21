@@ -37,6 +37,7 @@ android {
         manifestPlaceholders.put("PLUGIN_NAME", project.name)
         manifestPlaceholders.put("PLUGIN_VALUE", versionCode)
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        vectorDrawables.useSupportLibrary = true
     }
 //    dataBinding {
 //        enabled = true

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android"
+    >
+
+
+    <item >
+        <!-- 倒三角 -->
+        <rotate
+            android:fromDegrees="45"
+            android:pivotX="135%"
+            android:pivotY="15%"
+            android:toDegrees="45">
+            <shape android:shape="rectangle">
+                <solid android:color="#f00" />
+            </shape>
+        </rotate>
+    </item>
+
+<!--    <item >-->
+<!--        &lt;!&ndash; 上三角 &ndash;&gt;-->
+<!--        <rotate-->
+<!--            android:fromDegrees="-45"-->
+<!--            android:pivotX="135%"-->
+<!--            android:pivotY="85%"-->
+<!--            android:toDegrees="-45">-->
+<!--            <shape android:shape="rectangle">-->
+<!--                <solid android:color="#f00" />-->
+<!--            </shape>-->
+<!--        </rotate>-->
+<!--    </item>-->
+<!--    <item >-->
+<!--        &lt;!&ndash; 左三角 &ndash;&gt;-->
+<!--        <rotate-->
+<!--            android:fromDegrees="45"-->
+<!--            android:pivotX="90%"-->
+<!--            android:pivotY="135%"-->
+<!--            android:toDegrees="45">-->
+<!--            <shape android:shape="rectangle">-->
+<!--                <solid android:color="#f00" />-->
+<!--            </shape>-->
+<!--        </rotate>-->
+<!--    </item>-->
+<!--    原点对称-->
+<!--    <item >-->
+<!--        &lt;!&ndash; 右三角 &ndash;&gt;-->
+<!--        <rotate-->
+<!--            android:fromDegrees="45"-->
+<!--            android:pivotX="10%"-->
+<!--            android:pivotY="-35%"-->
+<!--            android:toDegrees="45">-->
+<!--            <shape android:shape="rectangle">-->
+<!--                <solid android:color="#f00" />-->
+<!--            </shape>-->
+<!--        </rotate>-->
+<!--    </item>-->
+
+    <!--    <item   android:top="0dp" android:right="0dp">-->
+<!--        &lt;!&ndash; 八角形 &ndash;&gt;-->
+<!--            <rotate-->
+
+<!--                android:fromDegrees="45"-->
+<!--                android:pivotX="50%"-->
+<!--                android:pivotY="50%"-->
+<!--                android:toDegrees="45">-->
+<!--                <shape-->
+<!--                    android:shape="rectangle">-->
+<!--                    <solid android:color="#f00" />-->
+<!--                </shape>-->
+<!--            </rotate>-->
+<!--    </item>-->
+
+
+</layer-list>
