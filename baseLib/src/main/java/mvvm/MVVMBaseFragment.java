@@ -8,7 +8,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.trello.rxlifecycle.components.support.RxFragment;
+import androidx.fragment.app.Fragment;
+
 import com.utils.log.MyToast;
 import com.widget.dialog.MyDialog;
 import com.yongliang.baselib.R;
@@ -18,7 +19,7 @@ import com.yongliang.baselib.R;
  * Created by renshiqian on 2018/10/30.
  */
 
-public class MVVMBaseFragment extends RxFragment {
+public class MVVMBaseFragment extends Fragment {
     private Dialog dialog;
     private Activity activity;
     private MyDialog meDialog;

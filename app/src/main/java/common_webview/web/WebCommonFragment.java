@@ -95,6 +95,7 @@ public class WebCommonFragment extends CoreBaseMVVMFragment<FragmentCommonWebBin
      *
      * @param bundle
      */
+    @Override
     public void onArgumentsHandle(Bundle bundle) {
         Url = bundle.getString(ConstantUtils.URL, "");
         rootUrl = Url;
@@ -160,7 +161,6 @@ public class WebCommonFragment extends CoreBaseMVVMFragment<FragmentCommonWebBin
 
     @Override
     public void onBinding(FragmentCommonWebBinding b) {
-        super.onBinding(b);
 //        oncreate 中初始化web
         initWeb();
     }

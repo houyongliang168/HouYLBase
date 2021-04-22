@@ -5,7 +5,6 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.INTERNET" />
 
-    <!--        android:name=".APP"-->
     <application
         android:name=".APP"
         android:allowBackup="true"
@@ -14,14 +13,24 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.HouYLBase">
-        <activity
-            android:name=".WebviewActivity"
-            android:theme="@style/AppTheme.LaunchTheme">
+
+        <activity android:name=".TestComposeViewActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".WebviewActivity"
+            android:theme="@style/AppTheme.LaunchTheme"
+           >
+<!--            -->
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
+
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+<!--            </intent-filter>-->
         </activity>
         <activity
             android:name=".constrantlayout.FullscreenActivity"
@@ -30,9 +39,7 @@
             android:theme="@style/Theme.HouYLBase.Fullscreen" />
         <activity android:name=".constrantlayout.MotionLayoutActivity" />
         <activity android:name=".constrantlayout.ConstrantActivity" />
-        <activity android:name=".MainActivity">
-
-        </activity>
+        <activity android:name=".MainActivity"></activity>
     </application>
 
 </manifest>
