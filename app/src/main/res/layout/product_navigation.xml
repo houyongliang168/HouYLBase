@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+    <FrameLayout
+        android:id="@+id/v_bg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorff5722"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:visibility="visible">
+
+        <!--    背景色的处理-->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@mipmap/mengceng_title"
+            android:visibility="visible">
+            <View
+                android:id="@+id/view_statusbar"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_10dp"
+                android:visibility="visible"
+                android:background="@color/colorff0000"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/iv_left_one"
+                android:layout_width="@dimen/dimen_36dp"
+                android:layout_height="@dimen/dimen_44dp"
+                android:clickable="true"
+                android:paddingLeft="@dimen/margin10"
+                android:paddingTop="@dimen/margin9"
+                android:paddingBottom="@dimen/margin9"
+                android:src="@mipmap/search"
+                android:visibility="visible"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view_statusbar" />
+
+            <ImageView
+                android:id="@+id/iv_left_two"
+                android:layout_width="@dimen/dimen_36dp"
+                android:layout_height="@dimen/dimen_44dp"
+                android:clickable="true"
+                android:paddingLeft="@dimen/margin10"
+                android:src="@mipmap/search"
+                android:visibility="gone"
+                app:layout_constraintLeft_toRightOf="@+id/iv_left_one"
+                app:layout_constraintTop_toBottomOf="@+id/view_statusbar" />
+
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dimen_30dp"
+                android:layout_marginLeft="@dimen/margin10"
+                android:layout_marginTop="@dimen/margin7"
+                android:layout_marginRight="@dimen/margin10"
+                android:layout_marginBottom="@dimen/margin10"
+                android:clickable="true"
+                android:drawableLeft="@mipmap/search"
+                android:drawablePadding="@dimen/margin5"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/margin10"
+                android:text="请输入搜索内容"
+                android:textColor="#999999"
+                android:textSize="@dimen/text13"
+                app:layout_constraintLeft_toRightOf="@+id/iv_left_two"
+                app:layout_constraintRight_toLeftOf="@+id/iv_right_two"
+                app:layout_constraintTop_toBottomOf="@+id/view_statusbar" />
+
+            <ImageView
+                android:id="@+id/iv_right_one"
+                android:layout_width="@dimen/dimen_36dp"
+                android:layout_height="@dimen/dimen_44dp"
+                android:clickable="true"
+                android:paddingTop="@dimen/margin9"
+                android:paddingRight="@dimen/margin10"
+                android:paddingBottom="@dimen/margin9"
+                android:src="@mipmap/search"
+                android:visibility="gone"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view_statusbar" />
+
+            <ImageView
+                android:id="@+id/iv_right_two"
+                android:layout_width="@dimen/dimen_36dp"
+                android:layout_height="@dimen/dimen_44dp"
+                android:clickable="true"
+                android:paddingRight="@dimen/margin10"
+                android:src="@mipmap/search"
+                android:visibility="gone"
+                app:layout_constraintRight_toLeftOf="@+id/iv_right_one"
+                app:layout_constraintTop_toBottomOf="@+id/view_statusbar" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </FrameLayout>
+
+
+</layout>

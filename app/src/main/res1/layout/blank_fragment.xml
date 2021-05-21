@@ -1,18 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:tl="http://schemas.android.com/apk/res-auto"
     tools:context=".utils.BlankFragment">
-
-    <TextView
+    <com.yongliang.houylbase.utils.tabs2.SlidingTabLayout2
+        android:id="@+id/tablayout"
+        tl:layout_constraintTop_toTopOf="parent"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Hello" />
+        android:layout_height="@dimen/dimen_45dp"
+        android:background="#ff5722"
+        tl:tl_divider_color="@color/colorWhite"
+        tl:tl_divider_padding="0dp"
+        tl:tl_divider_width="0dp"
+        tl:tl_indicator_height="0dp"
+        tl:tl_indicator_width="-1dp"
+        tl:tl_indicator_width_equal_title="true"
+        tl:tl_tab_padding="11dp"
+        tl:tl_tab_space_equal="false"
+        tl:tl_textSelectColor="@color/colorTitle"
+        tl:tl_textSelectSize="18sp"
+        tl:tl_textUnselectSize="14sp"
+        tl:tl_textBold="SELECT"
+        tl:tl_textUnselectColor="@color/color666666"
+        tl:tl_textsize="18sp" />
+
+    <com.yongliang.houylbase.utils.tabs2.NoScrollViewPager
+        android:id="@+id/viewpager_content"
+        tl:layout_constraintTop_toBottomOf="@+id/tablayout"
+        android:layout_width="match_parent"
+        android:layout_height="175dp"
+       />
     <LinearLayout
         android:id="@+id/ll_fg_contain"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="@dimen/dimen_20dp"
+        tl:layout_constraintBottom_toBottomOf="parent"
         android:orientation="vertical"></LinearLayout>
 
-</FrameLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

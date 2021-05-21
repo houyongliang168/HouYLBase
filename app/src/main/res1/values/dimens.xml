@@ -9,4 +9,8 @@
     <dimen name="dimen_10dp">10dp</dimen>
     <dimen name="dimen_35dp">35dp</dimen>
     <dimen name="dimen_44dp">44dp</dimen>
+    <dimen name="dimen_45dp">45dp</dimen>
+    <dimen name="margin9">9dp</dimen>
+    <dimen name="dimen_30dp">30dp</dimen>
+    <dimen name="margin7">7dp</dimen>
 </resources>
