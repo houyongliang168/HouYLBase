@@ -14,6 +14,7 @@ import launch.launchstarter.time.LauncheTimer;
  */
 @HiltAndroidApp
 public class APP  extends Application {
+    private static Context mContext;
 
 //    @Override
 //    protected void attachBaseContext(Context base) {
@@ -24,6 +25,7 @@ public class APP  extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+        mContext=this;
 //        sleep();
 //        sleep2();
 //        try {
@@ -65,4 +67,8 @@ public class APP  extends Application {
             e.printStackTrace();
         }
     }
+    public static  Context getContext(){
+        return mContext;
+    }
+
 }

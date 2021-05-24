@@ -1,0 +1,7 @@
+
+n	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(İò,
+h
+java:S1104	"RMake mModel a static final constant or non-public and provide accessors if needed.(ëëÉ
+g
+java:S1104
+"QMake mView a static final constant or non-public and provide accessors if needed.(ÜØùÆ

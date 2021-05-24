@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="common_weight.recy.PointBean"></import>
+
+        <variable
+            name="sbean"
+            type="PointBean" />
+    </data>
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/iv_more_point"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:paddingLeft="@dimen/margin5"
+            android:paddingRight="@dimen/margin5"
+            android:src="@{sbean.isSlected?@drawable/shape_main_selected:@drawable/shape_main_unselected}" />
+
+    </FrameLayout>
+
+
+</layout>

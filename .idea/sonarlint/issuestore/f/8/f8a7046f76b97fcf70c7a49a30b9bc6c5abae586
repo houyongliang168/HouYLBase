@@ -1,0 +1,17 @@
+
+g
+java:S1301Ô"KReplace this "switch" statement by "if" statements to increase readability.(ãÁğ™øÿÿÿÿ
+g	java:S117Ş"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(õ‹²ö
+x
+java:S1450&"]Remove the "mIsBackVisible" field and declare it as a local variable in the relevant methods.(Å¹Ñ×úÿÿÿÿ
+—
+java:S1186s"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(…×äñ
+
+java:S1186„"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(¯Ÿõåıÿÿÿÿ
+
+java:S1186‰"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ê‘·‡ùÿÿÿÿ
+=	java:S131Ô""Add a default case to this switch.(ãÁğ™øÿÿÿÿ
+W	java:S125"<This block of commented-out lines of code should be removed.(òÜªñûÿÿÿÿ
+R	java:S125‘"<This block of commented-out lines of code should be removed.(»™ì
+M
+java:S1068&"2Remove this unused "mIsBackVisible" private field.(Å¹Ñ×úÿÿÿÿ

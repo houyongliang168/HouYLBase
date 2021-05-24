@@ -37,4 +37,7 @@
         <attr name="flipDuration" format="integer"/>
         <attr name="flipEnabled" format="boolean"/>
     </declare-styleable>
+
+
+
 </resources>

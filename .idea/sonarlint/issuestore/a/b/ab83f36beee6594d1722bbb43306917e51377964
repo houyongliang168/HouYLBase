@@ -1,0 +1,31 @@
+
+e
+java:S2095Ê"NUse try-with-resources or close this "FileOutputStream" in a "finally" clause.(ãÂ§à
+e
+java:S2095Š"NUse try-with-resources or close this "FileOutputStream" in a "finally" clause.(éà¾î
+c
+java:S2095ô"LUse try-with-resources or close this "ZipInputStream" in a "finally" clause.(«Åö’
+e
+java:S2095È"IUse try-with-resources or close this "InputStream" in a "finally" clause.(ÏØÛ³ùÿÿÿÿ
+X
+java:S2184 "ACast one of the operands of this addition operation to a "float".(ˆîøâ
+]
+java:S2184¡"ACast one of the operands of this addition operation to a "float".(¨ï½Àıÿÿÿÿ
+X
+java:S2184¤"ACast one of the operands of this addition operation to a "float".(‹ò„Ã
+]
+java:S2184ª"ACast one of the operands of this addition operation to a "float".(ô‹Úşÿÿÿÿ
+U
+java:S4973¼"9Use the "equals" method if value comparison was intended.(ã•Äğşÿÿÿÿ
+N
+java:S18547"8Remove this useless assignment to local variable "file".(ùÑ÷Å
+I
+java:S1874<"3Remove this use of "inPurgeable"; it is deprecated.(´øç˜
+H
+java:S1874p"2Remove this use of "getOpacity"; it is deprecated.(©¥àü
+i	java:S100®"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(’–®úÿÿÿÿ
+h
+java:S3776ë"RRefactor this method to reduce its Cognitive Complexity from 17 to the 15 allowed.(Àğ‘G
+]	java:S899‰"BDo something with the "boolean" value returned by "createNewFile".(Ğ’Íùÿÿÿÿ
+?
+java:S14817")Remove this unused "file" local variable.(ùÑ÷Å

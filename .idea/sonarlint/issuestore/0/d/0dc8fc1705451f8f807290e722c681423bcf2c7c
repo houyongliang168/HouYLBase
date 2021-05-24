@@ -1,0 +1,47 @@
+
+`
+java:S2184Á"DCast one of the operands of this subtraction operation to a "float".(Û†ÊÍıÿÿÿÿ
+]
+java:S2184ó"ACast one of the operands of this division operation to a "float".(›×Ãîÿÿÿÿÿ
+]
+java:S2184ó"ACast one of the operands of this division operation to a "float".(›×Ãîÿÿÿÿÿ
+`
+java:S2184ó"DCast one of the operands of this subtraction operation to a "float".(›×Ãîÿÿÿÿÿ
+`
+java:S2184ó"DCast one of the operands of this subtraction operation to a "float".(›×Ãîÿÿÿÿÿ
+l	java:S117È"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ø¤±‚ÿÿÿÿÿ
+l	java:S117Ğ"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(çĞƒ†ûÿÿÿÿ
+n	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(İò,
+q
+java:S14507"[Remove the "bitmapShader" field and declare it as a local variable in the relevant methods.(¹ÕÃÇ
+l	java:S1160"WRename this field "border_width" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ƒñÖİ
+q	java:S1161"WRename this field "border_color" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¾­Ëüÿÿÿÿ
+k	java:S1163"VRename this field "boder_paint" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(å—Ç¡
+…
+java:S18450"oRename field "border_width" to prevent any misunderstanding/clash with field "BORDER_WIDTH" defined on line 43.(ƒñÖİ
+Š
+java:S18451"oRename field "border_color" to prevent any misunderstanding/clash with field "BORDER_COLOR" defined on line 44.(¾­Ëüÿÿÿÿ
+U
+java:S1161P":Add the "@Override" annotation above this method signature(Ö¼Ùıÿÿÿÿ
+U
+java:S1854k":Remove this useless assignment to local variable "scale2".(„§ïŸøÿÿÿÿ
+U
+java:S1854j":Remove this useless assignment to local variable "scale1".(€¤õ÷úÿÿÿÿ
+T
+java:S1854c"9Remove this useless assignment to local variable "scale".(¸İ†Úøÿÿÿÿ
+h
+java:S3776Y"RRefactor this method to reduce its Cognitive Complexity from 36 to the 15 allowed.(Ó¬ÂÆ
+6
+java:S1659h" Declare "dy" on a separate line.(Ë­Íã
+d
+java:S1871š"MThis branch's code block is the same as the block for the branch on line 134.(å¥‡
+V
+java:S1161­":Add the "@Override" annotation above this method signature(ÕÆ¾ùıÿÿÿÿ
+i	java:S100È"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ø¤±‚ÿÿÿÿÿ
+i	java:S100Ğ"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(çĞƒ†ûÿÿÿÿ
+Q
+java:S1161ğ":Add the "@Override" annotation above this method signature(Ÿ½Ÿ»
+V
+java:S1161÷":Add the "@Override" annotation above this method signature(äŠ”¬ÿÿÿÿÿ
+Q
+java:S1161":Add the "@Override" annotation above this method signature(Ò¥Ò

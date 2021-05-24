@@ -45,11 +45,11 @@ public class TestComposeViewActivity extends AppCompatActivity {
     }
 
     private void initView() {
-//        FragmentManager fragmentManager=getSupportFragmentManager();
-//
-//        FragmentTransaction ft= fragmentManager.beginTransaction();
-//        ft.add(R.id.ll_contain, BlankFragment.newInstance());
-//        ft.commitAllowingStateLoss();
+        FragmentManager fragmentManager=getSupportFragmentManager();
+
+        FragmentTransaction ft= fragmentManager.beginTransaction();
+        ft.add(R.id.ll_contain, BlankFragment.newInstance());
+        ft.commitAllowingStateLoss();
 
 //        View mErrorView = LayoutInflater.from (this).inflate (R.layout.page_error, null);
 //        ConstraintLayout.LayoutParams errorLayoutParams = new ConstraintLayout .LayoutParams (
@@ -65,13 +65,13 @@ public class TestComposeViewActivity extends AppCompatActivity {
 
 //        View mErrorView = LayoutInflater.from (this).inflate (R.layout.product_navigation, null);
 //        cl.addView(mErrorView);
-        showGuideView();
-        btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                MyToast.showShort("adfadf");
-            }
-        });
+//        showGuideView();
+//        btn.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                MyToast.showShort("adfadf");
+//            }
+//        });
 
     }
 

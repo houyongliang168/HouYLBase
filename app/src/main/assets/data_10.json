@@ -1,0 +1,37 @@
+{
+  "items":[
+    {
+      "parentId":"XX",
+      "imgurl":"图片 包含活动图",
+      "title":"标题",
+      "funcId":"功能ID",
+      "isNew":"0",
+      "dialog":{
+        "isShow":"0",
+        "dialogContent":"弹框内容 "
+      },
+      "click":{
+        "type":"h5",
+        "url":"xxx",
+        "pararms":"{}",
+        "nativeCode":"00000"
+      }
+    }, {
+      "parentId":"XX1",
+      "imgurl":"图片 包含活动图",
+      "title":"标题",
+      "funcId":"功能ID",
+      "isNew":"1",
+      "dialog":{
+        "isShow":"1",
+        "dialogContent":"弹框内容 "
+      },
+      "click":{
+        "type":"nativeCode",
+        "url":"xxx",
+        "pararms":"{}",
+        "nativeCode":"00000"
+      }
+    }
+  ]
+}

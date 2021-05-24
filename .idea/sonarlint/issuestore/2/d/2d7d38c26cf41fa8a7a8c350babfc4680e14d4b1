@@ -1,0 +1,62 @@
+
+j
+java:S2095Œ"NUse try-with-resources or close this "FileOutputStream" in a "finally" clause.(²£§øÿÿÿÿ
+i
+java:S2095Ì"MUse try-with-resources or close this "FileInputStream" in a "finally" clause.(ÓĞÊışÿÿÿÿ
+d
+java:S1192"IUse already-defined constant 'TAG' instead of duplicating its value here.(˜¶¥ìúÿÿÿÿ
+x
+java:S1488“"\Immediately return this expression instead of assigning it to the temporary variable "time".(ëüúêûÿÿÿÿ
+p
+java:S1450>"ZRemove the "isFirstInit" field and declare it as a local variable in the relevant methods.(šÚÄé
+i
+java:S3008("SRename this field "INSTANCE" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‰Óïì
+d	java:S116<"ORename this field "TYPE" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(­ˆ„ì
+n	java:S116D"TRename this field "TIME_SIZE" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ùÃù©øÿÿÿÿ
+d	java:S116F"ORename this field "DAYS" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¦¥Ğê
+v
+java:S1149‚"_Replace the synchronized class "StringBuffer" by an unsynchronized one such as "StringBuilder".(í…Ò‰
+{
+java:S1149Š"_Replace the synchronized class "StringBuffer" by an unsynchronized one such as "StringBuilder".(ûšˆŸüÿÿÿÿ
+o
+java:S2293,"YReplace the type specification in this constructor call with the diamond operator ("<>").(­ÿ³ü
+[
+java:S11246"EReorder the modifiers to comply with the Java Language Specification.(±¢¢
+`
+java:S11248"EReorder the modifiers to comply with the Java Language Specification.(Á¬İÿÿÿÿÿ
+[
+java:S1124:"EReorder the modifiers to comply with the Java Language Specification.(³—Ä
+[
+java:S1124@"EReorder the modifiers to comply with the Java Language Specification.(Ã¡‡™
+Z
+java:S1124B"EReorder the modifiers to comply with the Java Language Specification.(Ø©¹!
+^
+java:S1874a"CRemove this use of "getExternalStorageDirectory"; it is deprecated.(Â­Úÿÿÿÿÿ
+^
+java:S1874t"CRemove this use of "getExternalStorageDirectory"; it is deprecated.(Â­Úÿÿÿÿÿ
+]
+java:S2142¥"FEither re-interrupt this method or rethrow the "InterruptedException".(ä ¹€
+W	java:S125¾"<This block of commented-out lines of code should be removed.(ì²•Íüÿÿÿÿ
+G
+java:S1172Ò"+Remove this unused method parameter "file".(„¸É¸ùÿÿÿÿ
+I
+java:S1135Ó"2Complete the task associated to this TODO comment.(Ùåş†
+R	java:S125Ø"<This block of commented-out lines of code should be removed.(ËÉí»
+J
+java:S1874é"3Remove this use of "versionCode"; it is deprecated.(Ê÷ÚÑ
+C
+java:S3011ó",This accessibility update should be removed.(˜ÂÓ˜
+g	java:S128 "LEnd this switch case with an unconditional break, return or throw statement.(úâúÿÿÿÿ
+N
+java:S1135«"2Complete the task associated to this TODO comment.(°Á³ªüÿÿÿÿ
+W	java:S125¶"<This block of commented-out lines of code should be removed.(ß€ôúÿÿÿÿ
+X
+java:S1126¾"AReplace this if-then-else statement by a single return statement.(•…¦°
+U
+java:S3400Æ"9Remove this method and declare a constant for this value.(£­ûáùÿÿÿÿ
+\
+java:S2147Ó"ECombine this catch with the one at line 337, which has the same body.(ï­£Ä
+?	java:S108ş")Either remove or fill this block of code.(”ı¾
+i	java:S100Š"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ûšˆŸüÿÿÿÿ
+\
+java:S2147”"ECombine this catch with the one at line 402, which has the same body.(ï­£Ä
