@@ -17,6 +17,16 @@
             android:layout_height="match_parent"
             android:orientation="vertical"
             tl:layout_constraintBottom_toBottomOf="parent">
+            <FrameLayout
+                android:id="@+id/fl_contain"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"></FrameLayout>
+            <Button
+                android:id="@+id/btn0"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_50dp"
+                android:background="@color/colorff5722"
+                android:text="刷新数据"></Button>
             <Button
                 android:id="@+id/btn"
                 android:layout_width="match_parent"

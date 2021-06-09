@@ -1,24 +1,23 @@
-package com.txx.app.main.section.sectionProducts.funcSectionProduct
+package common_weight.recy.demo1;
 
 import android.content.Context
+import android.graphics.Typeface.NORMAL
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ObservableList
-import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 import com.yongliang.houylbase.R
 import com.yongliang.houylbase.databinding.ItemFunctionMoreFooterBinding
 import com.yongliang.houylbase.databinding.SectionItemFuncPointNormalBinding
-import common_weight.recy.PointBean
 
-class FuncPointRecyclerviewAdapter(var context: Fragment, var list: ObservableList<PointBean>?) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class FuncPointRecyclerviewAdapter(var context: Context, var list: ObservableList<PointBean>?) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     override fun getItemViewType(position: Int): Int {
-        return 1
+        return NORMAL
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
-        return if (viewType == 1) {
+        return if (viewType == NORMAL) {
             val binding: SectionItemFuncPointNormalBinding = DataBindingUtil.inflate(LayoutInflater.from(parent.context), R.layout.section_item_func_point_normal, parent, false)
             NormalViewHolder(binding)
         } else {

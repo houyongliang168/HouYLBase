@@ -14,6 +14,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.HouYLBase">
 
+<!--        <meta-data-->
+<!--            android:name="common_weight.recy.demo1.MyAppGlideModule"-->
+<!--            android:value="GlideModule" />-->
+
         <activity android:name=".TestComposeViewActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

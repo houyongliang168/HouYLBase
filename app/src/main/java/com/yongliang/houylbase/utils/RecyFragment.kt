@@ -10,8 +10,11 @@ import androidx.databinding.ObservableList
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.databinding.observable.DynamicChangeCallback
+import com.txx.app.main.section.factory.SectionFactory
 import com.yongliang.houylbase.R
 import com.yongliang.houylbase.databinding.RecyFragmentBinding
+import common_weight.recy.demo1.FuncSectionProduct
+import kotlinx.android.synthetic.main.recy_fragment.*
 import kotlin.random.Random
 
 class RecyFragment : Fragment() {
@@ -27,9 +30,13 @@ class RecyFragment : Fragment() {
         binding = DataBindingUtil.bind(view)
         return view
     }
-
+    lateinit var  p1:FuncSectionProduct;
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        p1 = SectionFactory.createProduct(FuncSectionProduct::class.java, this, Bundle())
+        p1?.addView(binding?.flContain)
+
         val manager = LinearLayoutManager(view.context);
         manager.orientation = LinearLayoutManager.VERTICAL
         binding?.recyclerView?.layoutManager = manager
@@ -45,7 +52,9 @@ class RecyFragment : Fragment() {
         binding?.btnChange?.setOnClickListener {
             changeData2()
         }
-
+        binding?.btn0?.setOnClickListener {
+            p1?.onReflesh();
+        }
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {

@@ -4,7 +4,7 @@
 
     <data>
 
-        <import type="common_weight.recy.PointBean"></import>
+        <import type="common_weight.recy.demo1.PointBean"></import>
 
         <variable
             name="sbean"

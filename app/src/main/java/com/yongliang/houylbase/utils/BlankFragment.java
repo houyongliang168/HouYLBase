@@ -17,7 +17,6 @@ import android.view.ViewGroup;
 
 import com.flyco.tablayout.SlidingTabLayout;
 import com.yongliang.houylbase.R;
-import com.yongliang.houylbase.utils.tabs2.AFragment;
 import com.yongliang.houylbase.utils.tabs2.NoScrollViewPager;
 import com.yongliang.houylbase.utils.tabs2.SlidingTabLayout2;
 import com.yongliang.houylbase.utils.tabs2.TabelFragmentPagerAdapter;
@@ -61,10 +60,10 @@ public class BlankFragment extends Fragment {
         // TODO: Use the ViewModel
 
         mFragments = new ArrayList<>();
-        mFragments.add( AFragment.newInstance(1));
-        mFragments.add( AFragment.newInstance(2));
-        mFragments.add( AFragment.newInstance(3));
-        mFragments.add( AFragment.newInstance(4));
+//        mFragments.add( AFragment.newInstance(1));
+//        mFragments.add( AFragment.newInstance(2));
+//        mFragments.add( AFragment.newInstance(3));
+//        mFragments.add( AFragment.newInstance(4));
 
         List<String> ss= Arrays.asList(mTitlesArrays);
         TabelFragmentPagerAdapter pagerAdapter = new TabelFragmentPagerAdapter(getChildFragmentManager(), mFragments, mTitlesArrays);

@@ -11,7 +11,6 @@ import android.widget.ImageView
 import android.widget.LinearLayout
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
-import com.yongliang.houylbase.utils.BlankFragment
 import com.yongliang.houylbase.utils.RecyFragment
 
 class TestComposeViewActivity : AppCompatActivity() {
@@ -44,6 +43,8 @@ class TestComposeViewActivity : AppCompatActivity() {
         val ft = fragmentManager.beginTransaction()
         ft.add(R.id.ll_contain, RecyFragment.newInstance())
         ft.commitAllowingStateLoss()
+
+
 
 //        View mErrorView = LayoutInflater.from (this).inflate (R.layout.page_error, null);
 //        ConstraintLayout.LayoutParams errorLayoutParams = new ConstraintLayout .LayoutParams (

@@ -14,6 +14,7 @@ import launch.launchstarter.time.LauncheTimer;
  */
 @HiltAndroidApp
 public class APP  extends Application {
+  public   static  String token="eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIiLCJqdGkiOiIyXzFfMDEwMDAwNTEiLCJpc3MiOiJ0YWlrYW5nIiwiaWF0IjoxNjIzMjA0MzcwLCJzdWIiOiJhcHAiLCJuYmYiOjE2MjMyMDQ5NTksImV4cCI6MTYyMzgwOTc1OSwic2VxTm8iOiIyMTA2MDkxMDA2MTA0NDAxMzg2NyJ9.FNhV9_IncZWHaZIjhTcOvHviuqMzJQ4FcuPs038W9hs";
     private static Context mContext;
 
 //    @Override

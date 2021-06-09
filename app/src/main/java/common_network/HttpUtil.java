@@ -59,6 +59,8 @@ public class HttpUtil {
                         .addHeader("appVersion", APKVersionCodeUtils.getVerName(APP.getContext()))//app版本号
                         .addHeader("phoneModel", android.os.Build.MODEL)//手机型号
                         .addHeader("osVersion", android.os.Build.VERSION.RELEASE)//手机系统版本号
+                        .addHeader("osType", "android")//手机系统版本号
+                        .addHeader("token", APP.token)//手机系统版本号
                         .build();
                 return chain.proceed(headerRequest);
             }

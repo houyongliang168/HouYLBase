@@ -78,6 +78,11 @@ dependencies {
     implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.8.0'
 
+//    implementation ("com.github.bumptech.glide:glide:4.11.0") {
+//        exclude group: "com.android.support"
+//    }
+//    kapt 'com.github.bumptech.glide:compiler:4.11.0'
+
 
 
 //        网络解析框架
@@ -99,7 +104,7 @@ dependencies {
 
     implementation "com.google.dagger:hilt-android:2.28-alpha"
     kapt "com.google.dagger:hilt-android-compiler:2.28-alpha"
-    compile 'com.flyco.tablayout:FlycoTabLayout_Lib:2.1.2@aar'
+    implementation 'com.flyco.tablayout:FlycoTabLayout_Lib:2.1.2@aar'
     implementation 'androidx.hilt:hilt-lifecycle-viewmodel:1.0.0-alpha02'
     kapt 'androidx.hilt:hilt-compiler:1.0.0-alpha02'
 
