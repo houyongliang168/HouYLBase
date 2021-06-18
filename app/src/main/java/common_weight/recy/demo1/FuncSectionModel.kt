@@ -94,7 +94,7 @@ class FuncSectionModel : BaseProductModel<BaseModel?> {
                             isShow.postValue(true)
                             //           存入基本数据 用于后面数据展示 请求成功后更新数据
                             ProcessSaveData.saveCacheDatas(it.items)
-                            pointStartAgainProcess()
+//                            pointStartAgainProcess()
                             return
                         }
 //           存入基本数据 用于后面数据展示 请求成功后更新数据

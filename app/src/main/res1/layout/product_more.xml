@@ -11,15 +11,18 @@
         android:id="@+id/consLayout_more"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#ffffff"
         android:paddingLeft="2dp"
         android:paddingTop="7dp"
         android:paddingRight="2dp"
+
        >
+<!--        android:minHeight="@dimen/dimen_50dp"-->
+<!--        android:maxHeight="148dp"-->
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recy_more"
-            android:layout_width="wrap_content"
-            android:layout_height="146dp"
+            android:layout_width="0dp"
+            android:layout_height="168dp"
+
             app:layout_constraintBottom_toTopOf="@+id/recy_more_point"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"

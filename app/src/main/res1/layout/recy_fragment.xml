@@ -20,7 +20,8 @@
             <FrameLayout
                 android:id="@+id/fl_contain"
                 android:layout_width="match_parent"
-                android:layout_height="200dp"></FrameLayout>
+                android:background="@color/coloreeeeee"
+                android:layout_height="wrap_content"></FrameLayout>
             <Button
                 android:id="@+id/btn0"
                 android:layout_width="match_parent"

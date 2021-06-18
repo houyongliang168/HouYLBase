@@ -10,6 +10,7 @@ import com.databinding.observable.DynamicChangeCallback
 import com.widget.dialog.MyDialog
 import com.yongliang.houylbase.R
 import com.yongliang.houylbase.databinding.ProductMoreBinding
+import com.yongliang.houylbase.utils.DensityUtils
 import common_weight.recy.demo1.baseView.FragmentBaseSectionProduct
 import common_weight.view.PagerConfig
 import common_weight.view.PagerGridLayoutManager
@@ -37,7 +38,30 @@ class FuncSectionProduct(context: Fragment, mBundle: Bundle) : FragmentBaseSecti
             it?.let {
                 if (it) {
                     showView()
-//                    mAdapter?.notifyDataSetChanged()
+
+//                    更新数据
+                    viewModel?.list?.size.let {
+                        var aa = it?.div(4)
+                        if (aa != null && aa > 1) {
+
+                            mLayoutManager = PagerGridLayoutManager(2, viewModel?.mColumns
+                                ?: 5, PagerGridLayoutManager.HORIZONTAL)
+                            binding?.recyMore?.layoutParams?.height=DensityUtils.dip2px(context,146f)
+
+                        }else{
+
+                            mLayoutManager = PagerGridLayoutManager( 1, viewModel?.mColumns
+                                ?: 5, PagerGridLayoutManager.HORIZONTAL)
+                            binding?.recyMore?.layoutParams?.height=DensityUtils.dip2px(context,73f)
+
+                        }
+
+                        binding?.recyMore?.layoutManager = mLayoutManager
+
+
+                    }
+                    mAdapter?.notifyDataSetChanged()
+
 //                    pointAdapter?.notifyDataSetChanged()
                 } else {
                     goneView()
@@ -70,7 +94,8 @@ class FuncSectionProduct(context: Fragment, mBundle: Bundle) : FragmentBaseSecti
     }
 
     private fun setAdapter() {
-        mLayoutManager = PagerGridLayoutManager(viewModel?.mRows ?: 2, viewModel?.mColumns
+        mLayoutManager = PagerGridLayoutManager( viewModel?.mRows
+            ?: 2, viewModel?.mColumns
                 ?: 5, PagerGridLayoutManager.HORIZONTAL)
         // 水平分页布局管理器
         mLayoutManager?.setPageListener(object : PagerGridLayoutManager.PageListener {
