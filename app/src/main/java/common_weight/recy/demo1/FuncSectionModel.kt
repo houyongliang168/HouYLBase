@@ -33,7 +33,7 @@ class FuncSectionModel : BaseProductModel<BaseModel?> {
     var isShow = SingleLiveEvent<Boolean>()
 
     val mRows = 2
-    val mColumns = 5
+    val mColumns = 4
     private val maxNum = mRows * mColumns
     private var pages = 2
 
