@@ -51,9 +51,9 @@ dependencies {
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
-    api 'com.github.bumptech.glide:glide:3.7.0'
+    api 'com.github.bumptech.glide:glide:4.8.0'
     implementation 'jp.wasabeef:glide-transformations:2.0.2'
-    implementation 'com.github.bumptech.glide:okhttp3-integration:1.4.0@aar'
+//    implementation 'com.github.bumptech.glide:okhttp3-integration:1.4.0@aar'
     //其他控件
     implementation librarys.nineoldandroids //动画 点赞动画
 }

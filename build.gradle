@@ -9,6 +9,20 @@ buildscript {
         maven { url 'https://maven.aliyun.com/repository/google' }  // <= here
         google()
         jcenter()
+//        mavenCentral()
+//        maven{ url 'https://maven.aliyun.com/repository/public'}
+//        maven { url 'https://maven.aliyun.com/repository/central' }
+//        maven { url 'https://maven.aliyun.com/repository/jcenter' }  // <= here
+//        maven { url 'https://maven.aliyun.com/repository/google' }  // <= here
+//        maven { url "https://maven.google.com" }
+//        jcenter() // 保留
+//
+//        google() // 保留
+//
+//
+//        maven {
+//            url "https://maven.google.com"
+//        }
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:4.0.1'
@@ -30,6 +44,21 @@ allprojects {
         maven { url 'https://jitpack.io' }
         google()
         jcenter()
+
+//        maven { url "https://jitpack.io" }
+//        mavenCentral()
+//        maven { url 'https://maven.aliyun.com/repository/central' }
+//        maven { url 'https://maven.aliyun.com/repository/jcenter' }  // <= here
+//
+//        maven{ url 'https://maven.aliyun.com/repository/public'}
+//        maven { url 'https://maven.aliyun.com/repository/google' }  // <= here
+//        maven { url "https://maven.google.com" }
+//        maven { url "https://dl.google.com/dl/android/maven2/" } /* 解决android.arch.lifecycle:extensions:1.1.1*/
+//        /* lrecyclerview 使用*/
+//
+//        jcenter() // 保留
+//        mavenCentral()
+//        google() // 保留
 
     }
 }
