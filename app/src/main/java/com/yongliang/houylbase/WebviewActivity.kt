@@ -5,11 +5,15 @@ import android.graphics.drawable.AnimatedVectorDrawable
 import android.graphics.drawable.ColorDrawable
 import android.os.Build
 import android.os.Bundle
+import android.util.Log
 import android.view.ViewTreeObserver
 import android.webkit.*
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.yongliang.houylbase.hilt.Truck
+import com.yongliang.houylbase.utils.JSUtils
+import com.yongliang.houylbase.webview.MyWebChromeClient
+import com.yongliang.houylbase.webview.MyWebviewClient
 import common_animation.drawable_animation.DrawableAnimationUtils.getAnimationDrawable
 import common_animation.drawable_animation.DrawableAnimationUtils.unzipFileFromAssets
 import dagger.hilt.android.AndroidEntryPoint
@@ -23,7 +27,7 @@ import javax.inject.Inject
 class WebviewActivity : AppCompatActivity() {
     @Inject
     lateinit var truck: Truck
-    val url = "https://www.baidu.com"
+    val url = "https://isales.taikang.com/static/testSdk/sdk.html"
    var mHasRecorded=false
     val  ss=SecondFragment()
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -38,10 +42,39 @@ class WebviewActivity : AppCompatActivity() {
 //            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
 //                .setAction("Action", null).show()
 
-            val  s1=ThreeFragment()
+            var jsStr = JSUtils.getJSContentFromAsset(this, "aa.js")
+//方式一
+            var ss="alert(\"aaaa\")"
+            ss = "console.log(\"输入成功了 aaa\")"
 
-            ss.addView(ll_contain,supportFragmentManager);
-            s1.addView(ll_contain,supportFragmentManager);
+            if (Build.VERSION.SDK_INT >= 19) {
+                webview.evaluateJavascript(ss, ValueCallback<String?>() {
+                    Log.d("houyl", "value=" + it);
+                });
+//                webview.evaluateJavascript(jsStr, ValueCallback<String?>() {
+//                    Log.d("houyl", "value=" + it);
+//                });
+            }
+
+//           var src="file:///android_asset/aa.js"
+//            var baseUrl = "file:///android_asset";
+//            webview.loadDataWithBaseURL(baseUrl, src, "text/html", "utf-8", null);
+
+//            var js = "var newscript = document.createElement(\"script\");";
+//            js += "newscript.src=\"file:///android_asset/aa.js\";";
+//            js += "document.body.appendChild(newscript);";
+//            webview.loadUrl("javascript:" + js);
+//
+//            if (Build.VERSION.SDK_INT >= 19) {
+//                webview.evaluateJavascript(js, ValueCallback<String?>() {
+//                    Log.d("houyl", "value=" + it);
+//                });
+//            }
+//            val  s1=ThreeFragment()
+//
+//            ss.addView(ll_contain,supportFragmentManager);
+//            s1.addView(ll_contain,supportFragmentManager);
+
 //            ss.addView(ll_contain);
 
 
@@ -103,15 +136,15 @@ class WebviewActivity : AppCompatActivity() {
         webview.setHorizontalScrollBarEnabled(false)
         // 辅助处理各种通知、请求事件，如果不设置WebViewClient，请求会跳转系统浏览器
         // 辅助处理各种通知、请求事件，如果不设置WebViewClient，请求会跳转系统浏览器
-        webview.setWebViewClient(WebViewClient())
+        webview.setWebViewClient(MyWebviewClient())
         // 辅助处理JavaScript、页喧解析渲染、页面标题、加载进度等等
         // 辅助处理JavaScript、页喧解析渲染、页面标题、加载进度等等
-        webview.setWebChromeClient(WebChromeClient())
+        webview.setWebChromeClient(MyWebChromeClient())
 
         val ws: WebSettings = webview.getSettings()
         //定义app的UserAgent
         //定义app的UserAgent
-        ws.setUserAgentString("houyongliang")
+        ws.setUserAgentString("android")
         // 防止个人敏感数据泄漏
         // 防止个人敏感数据泄漏
         ws.savePassword = false
@@ -175,6 +208,7 @@ class WebviewActivity : AppCompatActivity() {
         // 启动地理定位
         // 启动地理定位
         ws.setGeolocationEnabled(true)
+        ws.setJavaScriptEnabled(true)
         val dir: String = getDir("database", MODE_PRIVATE).getPath()
         ws.setGeolocationDatabasePath(dir)
         ws.databasePath=dir
@@ -182,7 +216,6 @@ class WebviewActivity : AppCompatActivity() {
         ws.setAppCacheEnabled(true)
         ws.setAppCacheMaxSize(20 * 1024 * 1024)
         ws.setAppCachePath(getDir("appcach", MODE_PRIVATE).getPath())
-
         // 此处添加自定义的JS接口,和H5进行交互
         webview.addJavascriptInterface(js, "android")
 

@@ -47,7 +47,7 @@ class FuncSectionModel : BaseProductModel<BaseModel?> {
     override fun loadData(mBundle: Bundle?) {
         super.loadData(mBundle)
 
-        var uu = "https://isaleuat.taikang.com/isales-platform-home/homepage/commonFunctions"
+        var uu = "https://isaleuat./isales-platform-home/homepage/commonFunctions"
 
         HttpUtil.init(HttpUtil.baseHttpUtils(SectionService::class.java, "https://www.baidu.com").commonFunctions(uu), object : Subscriber<CommonBean>() {
             override fun onCompleted() {}

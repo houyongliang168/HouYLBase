@@ -103,8 +103,9 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:tabBackground="@android:color/transparent"
             app:tabIndicatorHeight="0dp"
+            app:tabBackground="@android:color/transparent"
+            app:tabRippleColor="@android:color/transparent"
             app:tabSelectedTextColor="@color/colorff5722"
             app:tabTextColor="@color/color666666">
 

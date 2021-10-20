@@ -13,6 +13,8 @@ import com.databinding.observable.DynamicChangeCallback
 import com.txx.app.main.section.factory.SectionFactory
 import com.yongliang.houylbase.R
 import com.yongliang.houylbase.databinding.RecyFragmentBinding
+import common_weight.recy.MyItemDecoration
+import common_weight.recy.MyItemDecoration2
 import common_weight.recy.demo1.FuncSectionProduct
 import kotlinx.android.synthetic.main.recy_fragment.*
 import kotlin.random.Random
@@ -44,6 +46,7 @@ class RecyFragment : Fragment() {
         // 使用原生的 Adapter 即可
         val pointAdapter = StringAdapter(view.context, list)
         list?.addOnListChangedCallback(DynamicChangeCallback(pointAdapter))
+        binding?.recyclerView?.addItemDecoration(MyItemDecoration2(DensityUtils.dip2px(context,10f),DensityUtils.dip2px(context,10f)))
         binding?.recyclerView?.adapter = pointAdapter
 
         binding?.btn?.setOnClickListener {

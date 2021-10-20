@@ -11,7 +11,6 @@ import com.bumptech.glide.Glide
 import com.yongliang.houylbase.R
 import com.yongliang.houylbase.databinding.ItemFunctionMoreFooterBinding
 import com.yongliang.houylbase.databinding.SectionItemFuncNormalBinding
-import common_bitmap.MyGlideApp
 
 class FuncRecyclerviewAdapter(var context: Context, var list: ObservableList<ProcessItemBean>?) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     private var clickTime: Long = 0

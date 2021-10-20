@@ -6,7 +6,7 @@ import android.os.Parcelable;
 public class FunctionMoudleBean implements Cloneable, Parcelable {
 
     /**
-     * logoImgUrl : https://isaleuat.taikang.com/static/itemimg/2019012213382346250793.png
+     * logoImgUrl : https:///static/itemimg/2019012213382346250793.png
      * resourcePath : /1060
      * resourceName : 职业HWP专区
      * targetType : native

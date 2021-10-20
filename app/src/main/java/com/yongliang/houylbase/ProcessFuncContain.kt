@@ -64,7 +64,7 @@ object ProcessFuncContain {
             "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIiLCJqdGkiOiIyXzFfMDEwMDAwNTEiLCJpc3MiOiJ0YWlrYW5nIiwiaWF0IjoxNjIxNTgyOTUxLCJzdWIiOiJhcHAiLCJuYmYiOjE2MjE1ODI5NTEsImV4cCI6MTYyMjE4Nzc1MSwic2VxTm8iOiIyMTA1MjExNTQyMzE4Mzk1MzYwNyJ9.Net1VYqteDt7PKRMTl8sP-TJ87EfjVd0zyqiDj92nUs"
         HttpUtil.init(HttpUtil.createService(
             ApiService::class.java,
-            "https://isaleuat.taikang.com/"
+            "https://isaleuat./"
         )
             .moreFunctions(
                 token

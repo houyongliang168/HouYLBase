@@ -10,7 +10,7 @@ public class MoreFunctionsBean {
     /**
      * rspCode : 0
      * rspDesc : 成功
-     * info : {"moduleList":[{"functionList":[{"logoImgUrl":"https://isaleuat.taikang.com/static/itemimg/2019012213382346250793.png","resourcePath":"/1060","resourceName":"职业HWP专区","targetType":"native","type":"more","url":"","parentId":127,"blocked":"false","tip":"","id":128,"newFunction":"true","androidUpperLimit":"","iosUpperLimit":"","trackEvent":"","trackLabel":""}],"resourceName":"高客专区","id":127},{"functionList":[{"logoImgUrl":"https://isaleuat.taikang.com/static/itemimg/2019021309485781386792.png","resourcePath":"/1069","resourceName":"活动量管理","targetType":"native","type":"more","url":"","parentId":159,"blocked":"false","tip":"","id":160,"newFunction":"true","androidUpperLimit":"","iosUpperLimit":"","trackEvent":"","trackLabel":""}],"resourceName":"活动专区","id":159}]}
+     * info : {"moduleList":[{"functionList":[{"logoImgUrl":"https://isaleuat./static/itemimg/2019012213382346250793.png","resourcePath":"/1060","resourceName":"职业HWP专区","targetType":"native","type":"more","url":"","parentId":127,"blocked":"false","tip":"","id":128,"newFunction":"true","androidUpperLimit":"","iosUpperLimit":"","trackEvent":"","trackLabel":""}],"resourceName":"高客专区","id":127},{"functionList":[{"logoImgUrl":"https://isaleuat./static/itemimg/2019021309485781386792.png","resourcePath":"/1069","resourceName":"活动量管理","targetType":"native","type":"more","url":"","parentId":159,"blocked":"false","tip":"","id":160,"newFunction":"true","androidUpperLimit":"","iosUpperLimit":"","trackEvent":"","trackLabel":""}],"resourceName":"活动专区","id":159}]}
      * url :
      * pageNums : 0
      */
@@ -56,7 +56,7 @@ public class MoreFunctionsBean {
 
         public static class ModuleListBean implements Parcelable {
             /**
-             * functionList : [{"logoImgUrl":"https://isaleuat.taikang.com/static/itemimg/2019012213382346250793.png","resourcePath":"/1060","resourceName":"职业HWP专区","targetType":"native","type":"more","url":"","parentId":127,"blocked":"false","tip":"","id":128,"newFunction":"true","androidUpperLimit":"","iosUpperLimit":"","trackEvent":"","trackLabel":""}]
+             * functionList : [{"logoImgUrl":"https://isaleuat./static/itemimg/2019012213382346250793.png","resourcePath":"/1060","resourceName":"职业HWP专区","targetType":"native","type":"more","url":"","parentId":127,"blocked":"false","tip":"","id":128,"newFunction":"true","androidUpperLimit":"","iosUpperLimit":"","trackEvent":"","trackLabel":""}]
              * resourceName : 高客专区
              * id : 127
              */

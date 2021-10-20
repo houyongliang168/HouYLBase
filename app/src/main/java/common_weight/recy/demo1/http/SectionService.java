@@ -9,8 +9,7 @@ import rx.Observable;
 
 /**
  * 网络API接口类
- * https://sspuat.taikang.com/ 测试
- * https://ssp.taikang.com/ 正式
+
  */
 public interface SectionService {
 

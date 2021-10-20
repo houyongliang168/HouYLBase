@@ -2,8 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.yongliang.houylbase">
 
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 
     <application
         android:name=".APP"
@@ -13,23 +15,22 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.HouYLBase">
+<!--        <meta-data-->
+<!--            android:name="common_weight.recy.demo1.MyAppGlideModule"-->
+<!--            android:value="GlideModule"/>-->
 
 <!--        <meta-data-->
 <!--            android:name="common_weight.recy.demo1.MyAppGlideModule"-->
 <!--            android:value="GlideModule" />-->
 
         <activity android:name=".TestComposeViewActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".WebviewActivity"
             android:theme="@style/AppTheme.LaunchTheme"
            >
-<!--            -->
+
 <!--            <intent-filter>-->
 <!--                <action android:name="android.intent.action.MAIN" />-->
 
@@ -43,7 +44,14 @@
             android:theme="@style/Theme.HouYLBase.Fullscreen" />
         <activity android:name=".constrantlayout.MotionLayoutActivity" />
         <activity android:name=".constrantlayout.ConstrantActivity" />
-        <activity android:name=".MainActivity"></activity>
+        <activity android:name="com.yongliang.houylbase.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
     </application>
 
 </manifest>

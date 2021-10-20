@@ -8,9 +8,9 @@ import com.bumptech.glide.module.AppGlideModule
  * created by houyl
  * on  4:38 PM
  */
-@GlideModule
-class MyGlideApp() :AppGlideModule() {
-    override fun isManifestParsingEnabled(): Boolean {
-        return false
-    }
-}
+//@GlideModule
+//class MyGlideApp() :AppGlideModule() {
+//    override fun isManifestParsingEnabled(): Boolean {
+//        return false
+//    }
+//}

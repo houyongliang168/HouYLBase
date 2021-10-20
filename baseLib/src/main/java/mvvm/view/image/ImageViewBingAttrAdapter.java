@@ -7,6 +7,8 @@ import android.widget.ImageView;
 import androidx.databinding.BindingAdapter;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
+import com.glide.image.GlideCircleTransform;
 
 
 public class ImageViewBingAttrAdapter {
@@ -24,20 +26,39 @@ public class ImageViewBingAttrAdapter {
 
     @BindingAdapter({"app:imageUrl", "app:placeHolder", "app:error"})
     public static void loadImage(ImageView imageView, String url, Drawable holderDrawable, Drawable errorDrawable) {
-        Glide.with(imageView.getContext())
-                .load(url)
+//        Glide.with(imageView.getContext())
+//                .load(url)
+//                .placeholder(holderDrawable)
+//                .error(errorDrawable)
+//                .into(imageView);
+
+        RequestOptions requestOptions = new RequestOptions()
                 .placeholder(holderDrawable)
                 .error(errorDrawable)
+               ;
+        Glide.with(imageView.getContext())
+                .load(url)
+                .apply(requestOptions)
                 .into(imageView);
     }
 
     @BindingAdapter({"app:imageUrl", "app:placeHolder", "app:error"})
     public static void loadImage(ImageView imageView, String url, int holderDrawable, int errorDrawable) {
-        Glide.with(imageView.getContext())
-                .load(url)
+//        Glide.with(imageView.getContext())
+//                .load(url)
+//                .placeholder(holderDrawable)
+//                .error(errorDrawable)
+//                .into(imageView);
+
+        RequestOptions requestOptions = new RequestOptions()
                 .placeholder(holderDrawable)
                 .error(errorDrawable)
+                ;
+        Glide.with(imageView.getContext())
+                .load(url)
+                .apply(requestOptions)
                 .into(imageView);
+
     }
 
 
