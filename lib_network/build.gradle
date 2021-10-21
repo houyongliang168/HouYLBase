@@ -1,0 +1,18 @@
+apply from: "../module.lib.build.gradle"
+
+android {
+    defaultConfig {
+        versionCode 1
+        versionName "1"
+    }
+}
+dependencies {
+    /*网络依赖-rxjava1*/
+    api 'io.reactivex:rxjava:1.2.9'
+    api 'io.reactivex:rxandroid:1.2.1'
+    api 'com.squareup.retrofit2:retrofit:2.2.0'
+    api 'com.squareup.retrofit2:converter-gson:2.2.0'
+    api 'com.squareup.retrofit2:converter-scalars:2.0.0'
+    api 'com.squareup.retrofit2:adapter-rxjava:2.2.0'
+    api 'com.squareup.okhttp3:logging-interceptor:3.7.0'
+}

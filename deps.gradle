@@ -1,0 +1,242 @@
+ext {
+
+
+    support_versions = [
+            "suppor_library"   : "26.1.0",
+            "layout_v"         : "1.1.0",
+            "junit_version"    : "4.12",
+            "multidex"         : "1.0.1",
+            "kotlin_version"   : "1.4.21",
+            "navigationVersion": "2.0.0"
+    ]
+    //    所有依赖库在这里配置
+    deps_versions = [
+            "suppor_library": "26.1.0",
+            "layout_v"      : "1.1.3",
+            "junit_version" : "4.12",
+            "multidex"      : "1.0.3",
+            'okhttp'        : '3.9.0',
+            'retrofit'      : '2.3.0',
+            'glide'         : '4.11.0'
+    ]
+    third_versions = [
+
+    ]
+    //                "layout"                : "com.android.support.constraint:constraint-layout:${support_versions["layout_v"]}",
+//                    "appcompat"             : "com.android.support:appcompat-v7:${support_versions["suppor_library"]}",
+//                    "recyclerview"          : "com.android.support:recyclerview-v7:${support_versions["suppor_library"]}",
+//                    "suppoutDesign"         : "com.android.support:design:${support_versions["suppor_library"]}",
+//                    "cardview"              : "com.android.support:cardview-v7:${support_versions["suppor_library"]}",
+//                    "support"               : "com.android.support:support-v4:${support_versions["suppor_library"]}",
+//                    'lifecycle_extensions'  : "android.arch.lifecycle:extensions:1.1.1",
+//                    'rxlifecycle'           : "com.trello:rxlifecycle:1.0",
+//                    'rxlifecycle_components': "com.trello:rxlifecycle-components:1.0",
+//                    "multidex"              : "com.android.support:multidex:${support_versions["multidex"]}",
+
+//    多维数组的形式处理
+    deps = [
+            //support配置 谷歌提供的基本控件  注意 从数组中取key 值需要 "" 引用
+            'support' : [
+                    "layout"                 : "androidx.constraintlayout:constraintlayout:1.1.2",
+                    "appcompat"              : "androidx.appcompat:appcompat:1.2.0",
+                    "recyclerview"           : "androidx.recyclerview:recyclerview:1.0.0",
+                    "material"               : "com.google.android.material:material:1.2.1",
+                    "cardview"               : "androidx.cardview:cardview:1.0.0",
+                    "support"                : "androidx.legacy:legacy-support-v4:1.0.0",
+                    'lifecycle_extensions'   : "androidx.lifecycle:lifecycle-extensions:2.2.0",
+                    'lifecycle_runtime'      : "androidx.lifecycle:lifecycle-runtime:2.2.0",
+                    'rxlifecycle'            : "com.trello.rxlifecycle4:rxlifecycle:4.0.2",
+                    'rxlifecycle_components' : "com.trello.rxlifecycle4:rxlifecycle-components:4.0.2",
+                    "multidex"               : "androidx.multidex:multidex:2.0.0",
+                    "core"                   : "androidx.core:core:1.3.0",
+
+                    "viewpager2"             : "androidx.viewpager2:viewpager2:1.0.0",
+                    "annotation"             : "androidx.annotation:annotation:1.2.0",
+                    "annotation_experimental": "androidx.annotation:annotation-experimental:1.1.0",
+                    "constraintlayout"       : 'androidx.constraintlayout:constraintlayout:2.0.4',
+            ],
+            'test'    : [
+                    "junit"         : 'junit:junit:4.+',
+                    "junit_androidx": 'androidx.test.ext:junit:1.1.2',
+                    "espresso"      : 'androidx.test.espresso:espresso-core:3.3.0'
+            ],
+            'kotlin'  : [
+                    "stdlib"  : "org.jetbrains.kotlin:kotlin-stdlib${support_versions["kotlin_version"]}",
+                    "core_ktx": "androidx.core:core-ktx:1.3.2",
+            ],
+            'arouter' : [
+                    'api'     : 'com.alibaba:arouter-api:1.5.0',
+                    'compiler': 'com.alibaba:arouter-compiler:1.2.2',
+            ],
+
+            'glide'   : [
+                    'runtime'              : "com.github.bumptech.glide:glide:${deps_versions.glide}",
+                    'compiler'             : "com.github.bumptech.glide:compiler:${deps_versions.glide}",
+                    "glide_transformations": "jp.wasabeef:glide-transformations:2.0.2",
+                    "okhttp3_integration"  : "com.github.bumptech.glide:okhttp3-integration:1.4.0@aar",
+            ],
+            'okhttp'  : [
+                    'core'         : "com.squareup.okhttp3:okhttp:${deps_versions.okhttp}",
+                    'logger'       : "com.squareup.okhttp3:logging-interceptor:${deps_versions.okhttp}",
+                    'mockwebserver': "com.squareup.okhttp3:mockwebserver:${deps_versions.okhttp}",
+            ],
+
+            'retrofit': [
+                    'core'    : "com.squareup.retrofit2:retrofit:${deps_versions.retrofit}",
+                    'mock'    : "com.squareup.retrofit2:retrofit-mock:${deps_versions.retrofit}",
+                    'scalars' : "com.squareup.retrofit2:converter-scalars:${deps_versions.retrofit}",
+                    'gson'    : "com.squareup.retrofit2:converter-gson:${deps_versions.retrofit}",
+                    'moshi'   : "com.squareup.retrofit2:converter-moshi:${deps_versions.retrofit}",
+                    'protobuf': "com.squareup.retrofit2:converter-protobuf:${deps_versions.retrofit}",
+                    'rxjava2' : "com.squareup.retrofit2:adapter-rxjava2:${deps_versions.retrofit}",
+
+            ],
+
+            'rxjava2' : [
+                    'rxandroid': 'io.reactivex.rxjava2:rxandroid:2.0.2',
+                    'rxjava'   : 'io.reactivex.rxjava2:rxjava:2.1.13',
+            ],
+            //每个库 必须使用的三方库
+            "lib_core": [
+                    "wechat"             : "com.tencent.mm.opensdk:wechat-sdk-android-without-mta:+",/*（从5.4.3版本开始，wechat-sdk-android-with-mta不再维护）com.tencent.mm.opensdk:wechat-sdk-android-with-mta:5.1.6   */
+                    'gson'               : "com.google.code.gson:gson:2.8.1",
+                    "SensorsAnalyticsSDK": "com.sensorsdata.analytics.android:SensorsAnalyticsSDK:4.2.8",
+
+            ],
+            //三方ui 库
+            "ui"      : [
+                    "SmartRefreshLayout": "com.scwang.smartrefresh:SmartRefreshLayout:1.1.0-andx-11",   /* 刷新控件*/
+                    "photoview"         : "com.bm.photoview:library:1.4.1",
+                    "nineoldandroids"   : "com.nineoldandroids:library:2.4.0",
+            ],
+
+
+    ]
+
+
+    wechat_v = "+"
+    SensorsAnalyticsSDK_v = "4.2.8"
+
+    statusBarCompat_v = "2.1.3"
+    butterknife_v = "8.4.0"
+    rxjava_v = "1.2.9"
+    rxandroid_v = "1.2.1"
+    retrofit_v = "2.2.0"
+    converter_scalars_v = "2.0.0"
+    logging_interceptor_v = "3.7.0"
+    xbanner_v = "1.3.1"
+    glide_v = "3.7.0"
+    glide_transformations_v = "1.0.6"
+    eventbus_v = "3.0.0"
+    jpush_v = "3.0.5"
+    jcore_v = "1.1.2"
+    FlycoTabLayout_Lib_v = "2.1.2@aar"
+    DanmakuFlameMaster_v = "0.5.3"
+    _logger_v = "1.12"
+    green_dao_v = "3.2.2"
+    greendao_generator_v = "3.1.0"
+    PickerView_v = "3.2.5"
+    okhttp_urlconnection_v = "3.7.0"
+    okhttp3_integration_v = "1.4.0@aar"
+    RecordWave_v = "v1.1.3"
+    MPAndroidChart_v = "v3.0.2"
+    fresco_v = "0.12.0"
+    DatePicker_v = "2.2.0"
+    fastjson_v = "1.2.58"
+    imagepicker_v = "0.5.5"
+    NumberPickerView_v = "1.0.2"
+    commons_codec_v = "20041127.091804"
+    rxpermissions_v = "0.9.0@aar"
+    numberprogressbar_v = "1.4@aar"
+    stetho_v = "1.3.1"
+    subsampling_v = "3.4.1"
+    filedownloader_v = "1.6.9"
+    router_v = "1.1.1"
+    androidTestCompile_v = "2.2.2"
+    glide_transformations_v1 = "2.0.2"
+    plugin_lib_v = "2.2.4"
+    SmartRefreshLayout_v = "1.1.0-alpha-3"
+    zing_v = "3.6.0@aar"
+    //主要是三方控件
+
+    dependencies = [
+
+            "wechat"                       : "com.tencent.mm.opensdk:wechat-sdk-android-with-mta:${wechat_v}",
+            "SensorsAnalyticsSDK"          : "com.sensorsdata.analytics.android:SensorsAnalyticsSDK:${SensorsAnalyticsSDK_v}",
+            "photoview"                    : "com.bm.photoview:library:1.4.1",
+            "plugin_host"                  : "com.qihoo360.replugin:replugin-host-lib:2.2.4",
+            "zxing_core"                   : "com.google.zxing:core:3.2.1",
+            "zxing_android"                : "com.journeyapps:zxing-android-embedded:${zing_v}",
+            "gson"                         : "com.google.code.gson:gson:2.8.1",
+            "dbflow_processor"             : "com.github.Raizlabs.DBFlow:dbflow-processor:3.0.0",
+            "dbflow_core"                  : "com.github.Raizlabs.DBFlow:dbflow-core:3.0.0",
+            "dbflow"                       : "com.github.Raizlabs.DBFlow:dbflow:3.0.0-beta6@aar",
+            "tinypinyin"                   : "com.github.promeg:tinypinyin:1.0.0",
+            "BaseRecyclerViewAdapterHelper": "com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.22",
+            "crop"                         : "com.kevin:crop:1.0.2@aar",
+            "MagicIndicator"               : "com.github.hackware1993:MagicIndicator:1.5.0",
+            "ultimatebar"                  : "org.zackratos:ultimatebar:1.0.3",
+            "fingerprintidentify"          : "com.wei.android.lib:fingerprintidentify:1.2.1",
+
+            "circleimageview"              : "de.hdodenhof:circleimageview:2.1.0",
+            "xrecyclerview"                : "com.jcodecraeer:xrecyclerview:1.3.2",
+            "ChipsLayoutManager"           : "com.beloo.widget:ChipsLayoutManager:0.3.7@aar",
+            "litepal"                      : "org.litepal.android:core:1.5.1",
+            "ultimatebar"                  : "org.zackratos:ultimatebar:1.0.3",//沉浸式状态栏
+            "fragmentation"                : "me.yokeyword:fragmentation:1.1.2",//fragment管理器
+            "MagicIndicator"               : "com.github.hackware1993:MagicIndicator:1.5.0",//viewpager指示器
+
+
+            "butterknife"                  : "com.jakewharton:butterknife:${butterknife_v}",
+            "butterknife_compiler"         : "com.jakewharton:butterknife-compiler:${butterknife_v}",
+
+            "okhttp_urlconnection"         : "com.squareup.okhttp3:okhttp-urlconnection:${okhttp_urlconnection_v}",
+            "rxjava"                       : "io.reactivex:rxjava:${rxjava_v}",
+            "rxandroid"                    : "io.reactivex:rxandroid:${rxandroid_v}",
+            "retrofit"                     : "com.squareup.retrofit2:retrofit:${retrofit_v}",
+            "converter_gson"               : "com.squareup.retrofit2:converter-gson:${retrofit_v}",
+            "converter_scalars"            : "com.squareup.retrofit2:converter-scalars:${converter_scalars_v}",
+            "adapter_rxjava"               : "com.squareup.retrofit2:adapter-rxjava:${retrofit_v}",
+            "logging_interceptor"          : "com.squareup.okhttp3:logging-interceptor:${logging_interceptor_v}",
+
+            "xbanner"                      : "com.xhb:xbanner:${xbanner_v}",
+
+            "fresco"                       : "com.facebook.fresco:fresco:${fresco_v}",
+
+            "eventbus"                     : "org.greenrobot:eventbus:${eventbus_v}",
+            "jpush"                        : "cn.jiguang.sdk:jpush:${jpush_v}",
+            "jcore"                        : "cn.jiguang.sdk:jcore:${jcore_v}",
+            "FlycoTabLayout_Lib"           : "com.flyco.tablayout:FlycoTabLayout_Lib:${FlycoTabLayout_Lib_v}",
+            "DanmakuFlameMaster"           : "com.github.ctiao:DanmakuFlameMaster:${DanmakuFlameMaster_v}",
+            "commons_codec"                : "commons-codec:commons-codec:${commons_codec_v}",//加密与编码
+            "_logger"                      : "com.github.orhanobut:logger:${_logger_v}",
+            "greendao"                     : "org.greenrobot:greendao:${green_dao_v}",
+            "greendao_generator"           : "org.greenrobot:greendao-generator:${greendao_generator_v}",
+            "PickerView"                   : "com.contrarywind:Android-PickerView:${PickerView_v}",
+            "rxpermissions"                : "com.tbruyelle.rxpermissions:rxpermissions:${rxpermissions_v}",
+            "RecordWave"                   : "com.github.CarGuo:RecordWave:${RecordWave_v}",
+            "MPAndroidChart"               : "com.github.PhilJay:MPAndroidChart:${MPAndroidChart_v}",
+            "DatePicker"                   : "cn.aigestudio.datepicker:DatePicker:${DatePicker_v}",
+            "numberprogressbar"            : "com.daimajia.numberprogressbar:library:${numberprogressbar_v}",
+            "fastjson"                     : "com.alibaba:fastjson:${fastjson_v}",
+            "imagepicker"                  : "com.lzy.widget:imagepicker:${imagepicker_v}",
+            "stetho"                       : "com.facebook.stetho:stetho:${stetho_v}",
+            "NumberPickerView"             : "cn.carbswang.android:NumberPickerView:${NumberPickerView_v}",
+            "subsampling"                  : "com.davemorrissey.labs:subsampling-scale-image-view:${subsampling_v}",
+            "filedownloader"               : "com.liulishuo.filedownloader:library:${filedownloader_v}",
+            "glide"                        : "com.github.bumptech.glide:glide:${glide_v}",
+            "glide_transformations"        : "jp.wasabeef:glide-transformations:${glide_transformations_v1}",
+            "okhttp3_integration"          : "com.github.bumptech.glide:okhttp3-integration:${okhttp3_integration_v}",
+            "SmartRefreshLayout"           : "com.scwang.smartrefresh:SmartRefreshLayout:${SmartRefreshLayout_v}",   /* 刷新控件*/
+            "plugin_lib"                   : "com.qihoo360.replugin:replugin-plugin-lib:${plugin_lib_v}",
+            "photoview_chrisbanes"         : "com.github.chrisbanes.photoview:library:1.2.4"
+    ]
+}
+
+
+
+
+
+
+
+

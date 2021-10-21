@@ -1,4 +1,5 @@
 ext {
+//    默认配置 ，该配置后，一般不变动
 //    固定配置，一个app 配置后一般 不怎么变动
     androidConfig = [
             "compileSdkVersion": 30,

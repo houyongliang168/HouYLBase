@@ -1,0 +1,12 @@
+apply from: "../module.lib.build.gradle"
+
+android {
+    defaultConfig {
+        versionCode 1
+        versionName "1"
+    }
+}
+
+dependencies {
+    implementation 'commons-codec:commons-codec:20041127.091804'
+}

@@ -32,11 +32,11 @@ android {
         applicationId appId[project.name]
         minSdkVersion cfg.minSdkVersion
         targetSdkVersion cfg.targetSdkVersion
-        versionCode ver.versionCode
-        versionName ver.versionName
+//        versionCode ver.versionCode
+//        versionName ver.versionName
 //        multiDexEnabled true//设置 方法数量超 65535
-        manifestPlaceholders.put("PLUGIN_NAME", project.name)
-        manifestPlaceholders.put("PLUGIN_VALUE", versionCode)
+//        manifestPlaceholders.put("PLUGIN_NAME", project.name)
+//        manifestPlaceholders.put("PLUGIN_VALUE", versionCode)
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         vectorDrawables.useSupportLibrary = true
     }

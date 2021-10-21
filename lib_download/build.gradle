@@ -1,0 +1,8 @@
+apply from: "../module.lib.build.gradle"
+
+android {
+    defaultConfig {
+        versionCode 1
+        versionName "1"
+    }
+}
