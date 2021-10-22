@@ -12,6 +12,14 @@ ext {
             "app"  : "com.yongliang.houylbase"
     ]
 
+    //    常用参数配置  一般配置后不变 不增不减
+    signingConfig = [
+            storeFile_debug    : file(KEY_PATH),
+            storePassword_debug: KEY_PASS,
+            keyAlias_debug     : ALIAS_NAME,
+            keyPassword_debug  : ALIAS_PASS,
+    ]
+
 }
 
 

@@ -1,0 +1,56 @@
+//调用方式 根目录 build.gradle
+//allprojects {
+//    addRepos(repositories)
+//}
+
+/**
+ * 仓库地址管理
+ */
+def addRepos(RepositoryHandler handler) {
+    handler.maven {
+        allowInsecureProtocol true
+        url 'http://maven.aliyun.com/nexus/content/groups/public/'
+    }
+    handler.maven {
+        allowInsecureProtocol true
+        url 'http://maven.aliyun.com/repository/google/'
+    }
+    handler.maven {
+        allowInsecureProtocol true
+        url 'https://maven.aliyun.com/repository/jcenter/'
+    }
+    handler.maven {
+        allowInsecureProtocol true
+        url 'https://maven.aliyun.com/repository/public/'
+    }
+    handler.maven {
+        allowInsecureProtocol true
+        url 'https://jitpack.io'
+    }
+    handler.mavenCentral()
+    handler.google()
+}
+
+ext.addRepos = this.&addRepos
+
+/**
+ * 读取本机配置，主要用于本地差异化构建(local.properties不会提交到仓库)
+ */
+def readLocalProperty(String key) {
+    boolean value = false
+    def file = rootProject.file('local.properties')
+    if (file.exists() && file.isFile()) {
+        Properties properties = new Properties()
+        properties.load(file.newDataInputStream())
+        value = Boolean.parseBoolean(properties.getProperty(key, 'false'))
+    }
+    println(String.format("property key=%s value=%S", key, value))
+    return value
+}
+
+ext.readLocalProperty = this.&readLocalProperty
+// 调用方式
+// 线程池优化Gradle插件，测试稳定后再上线，目前仅用于线程池排查
+//if (readLocalProperty("THREAD_POOL_SHRINK")) {
+//    apply from: "thread.gradle"
+//}

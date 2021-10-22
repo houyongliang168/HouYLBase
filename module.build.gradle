@@ -5,9 +5,9 @@
 //    //作为组件运行
 //    apply plugin: 'com.android.library'
 //}
-def cfg = rootProject.ext.androidConfig
-def appId = rootProject.ext.appId
-def ver = rootProject.ext.moduleVersion
+//def cfg = rootProject.ext.androidConfig
+//def appId = rootProject.ext.appId
+//def ver = rootProject.ext.moduleVersion
 //plugins {
 //    id 'com.android.application'
 //    id 'kotlin-android'
@@ -16,52 +16,16 @@ def ver = rootProject.ext.moduleVersion
 ////    id 'androidx.navigation.safeargs'
 //
 //}
-
-apply plugin: 'com.android.application'
-apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-android-extensions'
 //apply plugin: 'kotlin-parcelize'
-apply plugin: 'kotlin-kapt'
-apply plugin: 'dagger.hilt.android.plugin'
+//apply plugin: 'dagger.hilt.android.plugin'
 //apply plugin: 'android-aspectjx'
-android {
-    compileSdkVersion cfg.compileSdkVersion
-    buildToolsVersion cfg.buildToolsVersion
 
-    defaultConfig {
-        applicationId appId[project.name]
-        minSdkVersion cfg.minSdkVersion
-        targetSdkVersion cfg.targetSdkVersion
 //        versionCode ver.versionCode
 //        versionName ver.versionName
 //        multiDexEnabled true//设置 方法数量超 65535
 //        manifestPlaceholders.put("PLUGIN_NAME", project.name)
 //        manifestPlaceholders.put("PLUGIN_VALUE", versionCode)
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-        vectorDrawables.useSupportLibrary = true
-    }
-//    dataBinding {
-//        enabled = true
-//    }
-    buildFeatures{
-        dataBinding = true
-        // for view binding :
-        // viewBinding = true
-    }
-    lintOptions {
-        checkReleaseBuilds false
-        // Or, if you prefer, you can continue to check for errors in release builds,
-        // but continue the build even when errors are found:
-        abortOnError false
-    }
 
-    dexOptions {
-        jumboMode = true
-    }
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
-    }
 //    signingConfigs {
 //        debug {
 //            v1SigningEnabled true
@@ -91,12 +55,83 @@ android {
 //        }
 //    }
 
+//module 通用的依赖项
+def isModule=libIsModule.toBoolean()
+if (isModule) {
+    //作为独立App应用运行
+    apply plugin: 'com.android.application'
+} else {
+    //作为组件运行
+    apply plugin: 'com.android.library'
+}
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion rootProject.ext.androidConfig.compileSdkVersion
+    buildToolsVersion rootProject.ext.androidConfig.buildToolsVersion
+
+    defaultConfig {
+        if(isModule){
+            applicationId appId[project.name]
+        }
+        minSdkVersion rootProject.ext.androidConfig.minSdkVersion
+        targetSdkVersion rootProject.ext.androidConfig.targetSdkVersion
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+//        vectorDrawables.useSupportLibrary = true
+    }
+    dataBinding {
+        enabled = true
+    }
+//    buildFeatures{
+//        dataBinding = true
+//        // for view binding :
+//        // viewBinding = true
+//    }
+
+    lintOptions {
+        /**
+         * 参考文档 ：https://www.cnblogs.com/yiweiyihang/p/12911971.html
+         */
+        //  true--所有正式版构建执行规则生成崩溃的lint检查，如果有崩溃问题将停止构建
+        checkReleaseBuilds false
+        // true--错误发生后停止gradle构建
+        abortOnError false
+    }
+
+    dexOptions {
+        /**
+         * 参考文档 ：https://blog.csdn.net/weixin_37625173/article/details/103334208
+         * 描述：每个 dex 的字符串索引也有限制，正常情况下为 2^16 个。但开启jumboMode 模式，可以支持到 2^32。但是值得注意的是，这个并不是 64K方法数量限制问题的一种方案。
+         */
+        jumboMode true
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+
+    signingConfigs {
+        release {
+            v1SigningEnabled true
+            v2SigningEnabled true
+            storeFile file(signingConfig.storeFile_debug)
+            storePassword signingConfig.storePassword_debug
+            keyAlias = signingConfig.keyAlias_debug
+            keyPassword signingConfig.keyPassword_debug
+        }
+    }
     buildTypes {
         release {
             debuggable true
             minifyEnabled false
             shrinkResources false
-//            signingConfig signingConfigs.release
+            signingConfig signingConfigs.release
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
 
         }
@@ -120,5 +155,16 @@ android {
 //        }
 //    }
 
+}
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation deps.kotlin.stdlib
+    implementation deps.kotlin.core_ktx
+    implementation deps.support.appcompat
+    implementation deps.support.constraintlayout
+    implementation deps.support.material
+    testImplementation deps.test.junit
+    androidTestImplementation deps.test.junit_androidx
+    androidTestImplementation deps.test.espresso
 }
 

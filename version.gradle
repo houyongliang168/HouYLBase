@@ -1,0 +1,40 @@
+ext {
+//    除了依赖信息的，其他配置信息 在这里配置
+
+    moduleVersion = [
+            "versionCode"      :   1,
+            "versionName"      :  "1.0"
+    ]
+
+    isModuleRun = [
+            login : false,//默认为 lib 运行
+            cusotm: false
+
+    ]
+
+    isDebug = [
+            login : true,//默认debug
+            cusotm: false
+    ]
+    // 域名配置
+    url = [
+            "debug"  : "debugUrl",
+            "release": "releaseUrl"
+    ]
+
+
+    isLoginModuleRun = [//判断是否 依赖 登陆运行
+                        custom: false,//默认为 lib 运行
+                        other : false
+
+    ]
+
+}
+
+
+
+
+
+
+
+
