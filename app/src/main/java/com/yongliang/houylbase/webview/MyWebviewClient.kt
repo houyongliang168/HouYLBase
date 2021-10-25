@@ -4,10 +4,6 @@ import android.graphics.Bitmap
 import android.os.Build
 import android.util.Log
 import android.webkit.*
-import com.utils.log.MyToast
-import com.yongliang.houylbase.utils.JSUtils
-import kotlinx.android.synthetic.main.content_webview.*
-import java.io.IOException
 
 /**
  *

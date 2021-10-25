@@ -1,7 +1,6 @@
 package com.yongliang.houylbase
 
 import android.graphics.Color
-import android.graphics.drawable.AnimatedVectorDrawable
 import android.graphics.drawable.ColorDrawable
 import android.os.Build
 import android.os.Bundle
@@ -10,14 +9,12 @@ import android.view.ViewTreeObserver
 import android.webkit.*
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.yongliang.houylbase.databinding.ActivityWebviewBinding
 import com.yongliang.houylbase.hilt.Truck
 import com.yongliang.houylbase.utils.JSUtils
 import com.yongliang.houylbase.webview.MyWebChromeClient
 import com.yongliang.houylbase.webview.MyWebviewClient
-import common_animation.drawable_animation.DrawableAnimationUtils.getAnimationDrawable
-import common_animation.drawable_animation.DrawableAnimationUtils.unzipFileFromAssets
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.android.synthetic.main.content_webview.*
 import launch.launchstarter.time.LauncheTimer
 import javax.inject.Inject
 
@@ -25,15 +22,20 @@ import javax.inject.Inject
 // 注入点
 @AndroidEntryPoint
 class WebviewActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityWebviewBinding
     @Inject
     lateinit var truck: Truck
     val url = "https://isales.taikang.com/static/testSdk/sdk.html"
    var mHasRecorded=false
     val  ss=SecondFragment()
+    var webview:WebView?=null
     override fun onCreate(savedInstanceState: Bundle?) {
         setTheme(R.style.LaunchTheme)
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_webview)
+        binding=ActivityWebviewBinding.inflate(layoutInflater)
+//        setContentView(R.layout.activity_webview)
+        setContentView(binding.root)
+        webview=binding.webContent.webview
         truck.deliver()
         setSupportActionBar(findViewById(R.id.toolbar))
 
@@ -48,7 +50,7 @@ class WebviewActivity : AppCompatActivity() {
             ss = "console.log(\"输入成功了 aaa\")"
 
             if (Build.VERSION.SDK_INT >= 19) {
-                webview.evaluateJavascript(ss, ValueCallback<String?>() {
+                webview?.evaluateJavascript(ss, ValueCallback<String?>() {
                     Log.d("houyl", "value=" + it);
                 });
 //                webview.evaluateJavascript(jsStr, ValueCallback<String?>() {
@@ -94,22 +96,22 @@ class WebviewActivity : AppCompatActivity() {
 //            }
 
         }
-        img4.setOnClickListener {
-            ss.remove(ll_contain)
+        binding.webContent.img4.setOnClickListener {
+            ss.remove( binding.webContent.llContain)
         }
 //        measureAATime()
         initwebview()
-        webview.loadUrl(url)
+        webview?.loadUrl(url)
 
     }
 
     private fun measureAATime() {
         if (!mHasRecorded) {
             mHasRecorded = true
-            webview.getViewTreeObserver()
-                .addOnPreDrawListener(object : ViewTreeObserver.OnPreDrawListener {
+            webview?.getViewTreeObserver()
+                ?.addOnPreDrawListener(object : ViewTreeObserver.OnPreDrawListener {
                     override fun onPreDraw(): Boolean {
-                        webview.getViewTreeObserver().removeOnPreDrawListener(this)
+                        webview?.getViewTreeObserver()!!.removeOnPreDrawListener(this)
                         LauncheTimer.endRecord("FeedShow")
                         return true
                     }
@@ -118,30 +120,35 @@ class WebviewActivity : AppCompatActivity() {
     }
 
     private fun initwebview() {
-        // Android 7.0以上的webview不设置背景（默认背景应该是透明的），渲染有问题，有明显的卡顿
-        // Android 7.0以上的webview不设置背景（默认背景应该是透明的），渲染有问题，有明显的卡顿
-        webview.setBackgroundDrawable(ColorDrawable(Color.WHITE))
+        webview?.apply {
 
-        // 移除默认接口防止恶意注入（安卓3.0以上，4.2以下才有此安全漏洞）
+            // Android 7.0以上的webview不设置背景（默认背景应该是透明的），渲染有问题，有明显的卡顿
+            // Android 7.0以上的webview不设置背景（默认背景应该是透明的），渲染有问题，有明显的卡顿
+            setBackgroundDrawable(ColorDrawable(Color.WHITE))
 
-        // 移除默认接口防止恶意注入（安卓3.0以上，4.2以下才有此安全漏洞）
-        val currentapiVersion = Build.VERSION.SDK_INT
-        if (currentapiVersion > 10) {
-            webview.removeJavascriptInterface("searchBoxJavaBridge_")
-            webview.removeJavascriptInterface("accessibility")
-            webview.removeJavascriptInterface("accessibilityTraversal")
+            // 移除默认接口防止恶意注入（安卓3.0以上，4.2以下才有此安全漏洞）
+
+            // 移除默认接口防止恶意注入（安卓3.0以上，4.2以下才有此安全漏洞）
+            val currentapiVersion = Build.VERSION.SDK_INT
+            if (currentapiVersion > 10) {
+                removeJavascriptInterface("searchBoxJavaBridge_")
+                removeJavascriptInterface("accessibility")
+                removeJavascriptInterface("accessibilityTraversal")
+            }
+            // 水平滚动条不显示
+            // 水平滚动条不显示
+            setHorizontalScrollBarEnabled(false)
+            // 辅助处理各种通知、请求事件，如果不设置WebViewClient，请求会跳转系统浏览器
+            // 辅助处理各种通知、请求事件，如果不设置WebViewClient，请求会跳转系统浏览器
+            setWebViewClient(MyWebviewClient())
+            // 辅助处理JavaScript、页喧解析渲染、页面标题、加载进度等等
+            // 辅助处理JavaScript、页喧解析渲染、页面标题、加载进度等等
+            setWebChromeClient(MyWebChromeClient())
+
+
         }
-        // 水平滚动条不显示
-        // 水平滚动条不显示
-        webview.setHorizontalScrollBarEnabled(false)
-        // 辅助处理各种通知、请求事件，如果不设置WebViewClient，请求会跳转系统浏览器
-        // 辅助处理各种通知、请求事件，如果不设置WebViewClient，请求会跳转系统浏览器
-        webview.setWebViewClient(MyWebviewClient())
-        // 辅助处理JavaScript、页喧解析渲染、页面标题、加载进度等等
-        // 辅助处理JavaScript、页喧解析渲染、页面标题、加载进度等等
-        webview.setWebChromeClient(MyWebChromeClient())
 
-        val ws: WebSettings = webview.getSettings()
+        val ws: WebSettings = webview!!.getSettings()
         //定义app的UserAgent
         //定义app的UserAgent
         ws.setUserAgentString("android")
@@ -217,7 +224,7 @@ class WebviewActivity : AppCompatActivity() {
         ws.setAppCacheMaxSize(20 * 1024 * 1024)
         ws.setAppCachePath(getDir("appcach", MODE_PRIVATE).getPath())
         // 此处添加自定义的JS接口,和H5进行交互
-        webview.addJavascriptInterface(js, "android")
+        webview?.addJavascriptInterface(js, "android")
 
     }
 
@@ -266,7 +273,7 @@ class WebviewActivity : AppCompatActivity() {
         代替 **将 不需要让服务器知道的信息 存储到 cookies **的这种传统方法
         Dom Storage 机制类似于 Android 的 SharedPreference机制
         4. 设置存储路径（setDatabasePath）Android中Webkit会为DOMStorage产生两个文件（my_path/localstorage/http_blog.csdn.net_0.localstorage和my_path/Databases.db）
-        5. 删除方法  删除该设置路径下的文件  兼容性考虑添加 context.deleteDatabase（"webview.db"）；context.deleteDatabase（"webviewCache.db"）；
+        5. 删除方法  删除该设置路径下的文件  兼容性考虑添加 context.deleteDatabase（"db"）；context.deleteDatabase（"webviewCache.db"）；
 
         D. Web SQL Database 缓存机制
         1.特点：充分利用数据库的优势，可方便对数据进行增加、删除、修改、查询
@@ -287,15 +294,20 @@ class WebviewActivity : AppCompatActivity() {
         cookieManager.removeAllCookies(ValueCallback { }) // Removes all cookies.
         CookieSyncManager.getInstance().sync() // forces sync manager to sync nØow
 // 清除网页查找的高亮匹配字符。
-        webview.clearMatches()
-        // 清除当前 WebView 访问的历史记录
-        webview.clearHistory()
+        webview?.apply {
+
+            clearMatches()
+            // 清除当前 WebView 访问的历史记录
+            clearHistory()
 //清除ssl信息  出来错误的证书信息
-        webview.clearSslPreferences()
+            clearSslPreferences()
 //清空网页访问留下的缓存数据。需要注意的时，由于缓存是全局的，所以只要是WebView用到的缓存都会被清空，即便其他地方也会使用到。该方法接受一个参数，从命名即可看出作用。若设为false，则只清空内存里的资源缓存，而不清空磁盘里的。
-        webview.clearCache(true)
+            clearCache(true)
 //        清除自动完成填充的表单数据。需要注意的是，该方法只需清除当前表单域自动完成填充的表单数据，并不会清除WebView存储到本地的数据。
-        webview.clearFormData()
+            clearFormData()
+
+        }
+
         WebStorage.getInstance().deleteAllData()
 
 

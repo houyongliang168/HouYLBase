@@ -1,31 +1,28 @@
-//常见的三方库管理
-apply plugin: 'com.android.library'
+//module application 通用的依赖项
+//作为独立App应用运行
+apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-parcelize'
 apply plugin: 'kotlin-kapt'
-//plugins {
-//    id 'com.android.library'
-//    id 'kotlin-android'
-//    id 'kotlin-parcelize'
-//    id 'kotlin-kapt'
-//}
-//def supports = rootProject.ext.support
+def versions = rootProject.ext.moduleVersion
 android {
-//    signingConfigs {
-//        release {
-//            v1SigningEnabled true
-//            v2SigningEnabled true
-//        }
-//    }
     compileSdkVersion rootProject.ext.androidConfig.compileSdkVersion
     buildToolsVersion rootProject.ext.androidConfig.buildToolsVersion
+
     defaultConfig {
+        applicationId rootProject.ext.appId[project.name]
         minSdkVersion rootProject.ext.androidConfig.minSdkVersion
         targetSdkVersion rootProject.ext.androidConfig.targetSdkVersion
-        multiDexEnabled true
+        versionCode versions[project.name].versionCode
+        versionName versions[project.name].versionName
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
 
+    buildFeatures {
+        dataBinding = true
+        // for view binding :
+        // viewBinding = true
+    }
 
     lintOptions {
         /**
@@ -44,38 +41,58 @@ android {
          */
         jumboMode true
     }
-
-    kotlinOptions {
-        jvmTarget = "1.8"
-    }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
-    buildTypes {
-        debug {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-        }
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-        }
+    kotlinOptions {
+        jvmTarget = "1.8"
     }
-    //  问题：  DSL element 'android.dataBinding.enabled' is obsolete and has been replaced with 'android.buildFeatures.dataBinding'.
-//It will be removed in version 5.0 of the Android Gradle plugin.
-//Affected Modules: app, lib_bitmap, lib_cipher, lib_download, lib_network, lib_widgetstore
-//    dataBinding {
-//        enabled true
+//    // For Kotlin projects
+//    kotlinOptions {
+//        jvmTarget = JavaVersion.VERSION_1_8.toString()
 //    }
-    buildFeatures {
-        dataBinding = true
-        // for view binding :
-        // viewBinding = true
+
+    signingConfigs {
+        release {
+            v1SigningEnabled true
+            v2SigningEnabled true
+            storeFile file(signingConfig.storeFile_debug)
+            storePassword signingConfig.storePassword_debug
+            keyAlias = signingConfig.keyAlias_debug
+            keyPassword signingConfig.keyPassword_debug
+        }
     }
+    buildTypes {
+        release {
+            debuggable true
+            minifyEnabled false
+            shrinkResources false
+            signingConfig signingConfigs.release
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+
+        }
+
+        debug {
+            debuggable true
+            minifyEnabled false
+            shrinkResources false
+//            signingConfig signingConfigs.debug
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+
+        }
+    }
+
+//    android.applicationVariants.all { variant ->
+//        variant.outputs.all {
+//            outputFileName = "${project.name}_${variant.buildType.name}" +
+//                    "_v${defaultConfig.versionCode}" +
+//                    "_${new Date().format("yyyy-MM-dd_HH-mm-ss", TimeZone.getTimeZone("GMT+08:00"))}" +
+//                    ".apk"
+//        }
+//    }
 
 }
-
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation deps.kotlin.stdlib
@@ -87,7 +104,4 @@ dependencies {
     androidTestImplementation deps.test.junit_androidx
     androidTestImplementation deps.test.espresso
 }
-/**
- * 使用方式
- * apply from: "../module.build.gradle"
- */
+

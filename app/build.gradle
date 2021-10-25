@@ -1,7 +1,8 @@
 
-apply from: "../module.build.gradle"
-apply plugin: 'kotlin-android'
 
+apply from: "../module.app.build.gradle"
+apply plugin: 'kotlin-android'
+apply plugin: 'dagger.hilt.android.plugin'
 android {
     sourceSets {
 
@@ -16,18 +17,15 @@ android {
         }
 
     }
-
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
-    }
-    // For Kotlin projects
-    kotlinOptions {
-        jvmTarget = JavaVersion.VERSION_1_8.toString()
-    }
-//    kotlinOptions {
-//        jvmTarget = '1.8'
+//    defaultConfig {
+//        javaCompileOptions {
+//            annotationProcessorOptions {
+//                arguments += ["room.schemaLocation":
+//                                     "$projectDir/schemas".toString()]
+//            }
+//        }
 //    }
+
 
 //    flavorDimensions("typeFunction")
 //
@@ -76,7 +74,7 @@ dependencies {
     implementation 'androidx.navigation:navigation-ui-ktx:2.3.2'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
-    annotationProcessor 'com.github.bumptech.glide:compiler:4.8.0'
+    kapt 'com.github.bumptech.glide:compiler:4.8.0'
 
 //    implementation ("com.github.bumptech.glide:glide:4.11.0") {
 //        exclude group: "com.android.support"
@@ -92,7 +90,7 @@ dependencies {
 
     //吐司兼容7.0 版本 两种方案
     implementation 'com.github.Dovar66:DToast:1.1.6'
-    implementation 'com.hjq:toast:8.8'
+//    implementation 'com.hjq:toast:8.8'
     api project(':lib_core')
 
     implementation 'com.google.android.material:material:1.3.0-alpha04'

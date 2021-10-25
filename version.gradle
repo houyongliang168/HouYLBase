@@ -1,9 +1,16 @@
 ext {
-//    除了依赖信息的，其他配置信息 在这里配置
+//    配置依赖的版本信息
 
     moduleVersion = [
-            "versionCode"      :   1,
-            "versionName"      :  "1.0"
+            "app":[
+                    "versionCode"      :   1,
+                    "versionName"      :  "1.0"
+            ],
+            "module_download":[
+                    "versionCode"      :   1,
+                    "versionName"      :  "1.0"
+            ],
+
     ]
 
     isModuleRun = [

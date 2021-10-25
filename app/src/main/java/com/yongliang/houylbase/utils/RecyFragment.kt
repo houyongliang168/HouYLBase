@@ -16,7 +16,6 @@ import com.yongliang.houylbase.databinding.RecyFragmentBinding
 import common_weight.recy.MyItemDecoration
 import common_weight.recy.MyItemDecoration2
 import common_weight.recy.demo1.FuncSectionProduct
-import kotlinx.android.synthetic.main.recy_fragment.*
 import kotlin.random.Random
 
 class RecyFragment : Fragment() {

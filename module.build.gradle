@@ -64,9 +64,8 @@ if (isModule) {
     //作为组件运行
     apply plugin: 'com.android.library'
 }
-apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-parcelize'
 apply plugin: 'kotlin-kapt'
 
 android {
@@ -82,14 +81,17 @@ android {
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 //        vectorDrawables.useSupportLibrary = true
     }
-    dataBinding {
-        enabled = true
-    }
-//    buildFeatures{
-//        dataBinding = true
-//        // for view binding :
-//        // viewBinding = true
+//    DSL element 'android.dataBinding.enabled' is obsolete and has been replaced with 'android.buildFeatures.dataBinding'.
+//It will be removed in version 5.0 of the Android Gradle plugin.
+//Affected Modules: app, lib_bitmap, lib_cipher, lib_download, lib_network, lib_widgetstore
+//    dataBinding {
+//        enabled = true
 //    }
+    buildFeatures{
+        dataBinding = true
+        // for view binding :
+        // viewBinding = true
+    }
 
     lintOptions {
         /**
