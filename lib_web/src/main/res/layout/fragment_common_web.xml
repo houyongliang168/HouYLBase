@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:bind="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="com.yongliang.lib_web.web.WebpageViewModel"></import>
+
+        <variable
+            name="webViewModel"
+            type="WebpageViewModel" />
+
+    </data>
+
+    <LinearLayout
+        android:id="@+id/ll_web"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".modules.web.WebCommonFragment">
+        <TextView
+            android:id="@+id/v_statusbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorff5722"
+            android:visibility="gone"
+            tools:ignore="Suspicious0dp"></TextView>
+
+        <ViewStub
+            android:id="@+id/web_head"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout="@layout/viewstub_layout_web_head"
+            bind:viewModel="@{webViewModel}"></ViewStub>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+<!--            android:background="@color/colorff5722"-->
+            <FrameLayout
+                android:id="@+id/fl_web"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                bind:layout_constraintBottom_toBottomOf="parent"
+                bind:layout_constraintLeft_toLeftOf="parent"
+                bind:layout_constraintRight_toRightOf="parent"
+                bind:layout_constraintTop_toTopOf="parent"></FrameLayout>
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                style="@android:style/Widget.ProgressBar.Horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="3dip"
+                android:progressDrawable="@drawable/progress_bar_h5"
+                bind:layout_constraintLeft_toLeftOf="parent"
+                bind:layout_constraintRight_toRightOf="parent"
+                android:visibility="gone"
+                bind:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </LinearLayout>
+</layout>

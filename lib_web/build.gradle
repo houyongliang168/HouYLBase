@@ -1,0 +1,16 @@
+apply from: "../module.lib.build.gradle"
+
+android {
+    defaultConfig {
+        versionCode 1
+        versionName "1"
+    }
+    defaultConfig {
+        buildConfigField( "boolean" ,"isRelease",String.valueOf(isRelease))
+    }
+}
+dependencies {
+    api project(':lib_core')
+}
+//    implementation 'androidx.appcompat:appcompat:1.2.0'
+//    implementation 'com.google.android.material:material:1.3.0'
