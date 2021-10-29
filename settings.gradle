@@ -7,3 +7,5 @@ include ':lib_network'
 include ':lib_core'
 include ':app'
 rootProject.name = "HouYLBase"
+include ':lib_launch'
+include ':lib_web'

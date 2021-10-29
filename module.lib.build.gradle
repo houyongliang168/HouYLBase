@@ -24,6 +24,8 @@ android {
         targetSdkVersion rootProject.ext.androidConfig.targetSdkVersion
         multiDexEnabled true
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        buildConfigField( "boolean" ,"isRelease",String.valueOf(isRelease))
+
     }
 
 
