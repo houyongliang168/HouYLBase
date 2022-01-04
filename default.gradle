@@ -10,7 +10,8 @@ ext {
 
     appId = [
             "app"  : "com.yongliang.houylbase",
-            "module_download"  : "com.yongliang.downloadmodule"
+            "module_download"  : "com.yongliang.downloadmodule",
+            "module_audioandvideo"  : "com.yongliang.module_audioandvideo",
     ]
 
     //    常用参数配置  一般配置后不变 不增不减

@@ -21,6 +21,7 @@ import com.yongliang.houylbase.utils.DensityUtils
 import com.yongliang.houylbase.utils.JSONLocalTools
 import com.yongliang.houylbase.utils.Utils
 import com.yongliang.houylbase.utils.tabs.TabLayout
+import workmanager.MainWorker
 
 
 class MainActivity : AppCompatActivity() {
@@ -103,14 +104,15 @@ class MainActivity : AppCompatActivity() {
 //
 //        binding.constaintLayoutMain.addView(viewsss);
 
-        val intentt= Intent()
-
-        intentt.setClassName(
-            "com.yongliang.houylbase",
-            "com.yongliang.houylbase.constrantlayout.FullscreenActivity"
-        )
-        startActivity(intentt)
+//        val intentt= Intent()
+//
+//        intentt.setClassName(
+//            "com.yongliang.houylbase",
+//            "com.yongliang.houylbase.constrantlayout.FullscreenActivity"
+//        )
+//        startActivity(intentt)
 //        binding.constaintLayoutMain.removeView(view);
+        MainWorker.doWork(this.application)
     }
 
     /**

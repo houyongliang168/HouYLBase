@@ -7,6 +7,3 @@ android {
     }
 }
 
-dependencies {
-    api 'commons-codec:commons-codec:20041127.091804'
-}

@@ -63,4 +63,23 @@ dependencies {
     implementation 'com.trello:rxlifecycle-components:1.0'
     implementation 'androidx.lifecycle:lifecycle-extensions:2.0.0-alpha1'
     implementation 'androidx.lifecycle:lifecycle-reactivestreams-ktx:2.0.0'
+
+//    workmanger 处理
+    def work_version = "2.7.0"
+
+    // （仅Java使用，如果你的项目是基于Java开发的，引入这个）
+    implementation "androidx.work:work-runtime:$work_version"
+
+    // （Kotlin + coroutines，如果你的项目基于Kotlin开发，引入这个）
+    implementation "androidx.work:work-runtime-ktx:$work_version"
+
+    // 可选 - RxJava2 support
+    implementation "androidx.work:work-rxjava2:$work_version"
+
+    // 可选 - GCMNetworkManager support
+    implementation "androidx.work:work-gcm:$work_version"
+
+    // 可选 - 测试支持
+    androidTestImplementation "androidx.work:work-testing:$work_version"
+//    原文链接：https://blog.csdn.net/yingaizhu/article/details/105392459
 }

@@ -9,3 +9,5 @@ include ':app'
 rootProject.name = "HouYLBase"
 include ':lib_launch'
 include ':lib_web'
+include ':lib_tools'
+include ':module_audioandvideo'

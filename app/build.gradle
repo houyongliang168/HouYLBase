@@ -11,9 +11,9 @@ android {
 //      module 可能是 对这种模式的再处理；该模式可以共用一个 buildgradle, module 形式可能会有多种库，有冲突；
 //      module 可以互相引用，采用下面这种方式不可以； 这可以看做是对 目录的分离；将目录与目录之间分开； 粒度比module 小，可以作为对module 的补充。
         main {
-//       这样可以将不同功能的代码隔离，方便删除
-            res.srcDirs = ['src/main/res1', 'src/main/res', 'src/common_cipher/res']
-            java.srcDirs = ['src/main/java', 'src/main/java_firstpage', 'src/main/common_cipher']
+//       这样可以将不同功能的代码隔离，方便删除  , 'src/common_cipher/res' , 'src/main/common_cipher'
+            res.srcDirs = ['src/main/res1', 'src/main/res']
+            java.srcDirs = ['src/main/java', 'src/main/java_firstpage']
         }
 
     }
@@ -92,6 +92,7 @@ dependencies {
     implementation 'com.github.Dovar66:DToast:1.1.6'
 //    implementation 'com.hjq:toast:8.8'
     api project(':lib_core')
+    api project(':lib_web')
 
     implementation 'com.google.android.material:material:1.3.0-alpha04'
     testImplementation 'junit:junit:4.+'
