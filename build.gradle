@@ -19,13 +19,12 @@ buildscript {
 
     repositories {
 //      这个给 下面插件下载使用的 优先google 相关网址
-        mavenLocal()
+//        mavenLocal()
         google()
         mavenCentral()
-        jcenter()
         maven {
             url 'https://maven.aliyun.com/repository/google' }  // <= here
-        maven { url "https://maven.google.com" }
+
         maven {
             allowInsecureProtocol = true
             url 'http://maven.aliyun.com/nexus/content/repositories/google' }
@@ -38,9 +37,11 @@ buildscript {
             url 'http://maven.aliyun.com/nexus/content/groups/public/' }
          maven { url "https://jitpack.io" }
         // 如果需要的话，从https://jcenter.bintray.com/下载code reposities。
-
-
-
+//        mavenCentral()
+//        google()
+//
+//        jcenter()
+//        maven { url "https://maven.google.com" }
     }
 
     // grade的android-library插件的版本
@@ -58,14 +59,20 @@ buildscript {
     }
 }
 // 该配置会被应用到所有的子工程。
+//参考 ：https://blog.csdn.net/qq_24118527/article/details/111576904
 allprojects {
     repositories {
-        flatDir{
-            dirs 'libs'
-        }
-        mavenLocal()
-        mavenCentral()
+//        flatDir{
+//            dirs 'libs'
+//        }
         google()
+//        mavenCentral()
+//        jcenter()
+        maven { url 'https://www.jitpack.io' }
+        maven { url 'https://maven.aliyun.com/repository/google' }  // <= here
+        maven { url 'https://maven.aliyun.com/repository/public' }
+        maven { url 'https://maven.aliyun.com/repository/jcenter' }  // <= here
+        maven { url 'https://maven.aliyun.com/repository/central' }
         maven {
             allowInsecureProtocol = true
             url 'http://mvn.cloud.alipay.com/nexus/content/repositories/releases/'
@@ -75,22 +82,23 @@ allprojects {
                 password 'mrk8929'
             }
         }
-        maven { url "https://jitpack.io" }
-        maven { url 'https://maven.aliyun.com/repository/jcenter' }  // <= here
-        maven { url 'https://maven.aliyun.com/repository/google' }  // <= here
 
-        maven { url 'https://maven.aliyun.com/repository/public' }
-        maven { url 'https://maven.aliyun.com/repository/central' }
         maven {
             allowInsecureProtocol = true
             url 'http://maven.aliyun.com/nexus/content/repositories/google' }
         maven {
             allowInsecureProtocol = true
             url 'http://maven.aliyun.com/nexus/content/groups/public/' }
-        maven { url "https://maven.google.com" }
+//        maven { url "https://maven.google.com" }
         maven { url "https://dl.google.com/dl/android/maven2/" }
         // 如果需要的话，从https://jcenter.bintray.com/下载code reposities。
-        jcenter()
+//        jcenter()
+//
+
+//        mavenLocal()
+//        mavenCentral()
+//        google()
+
 
 
     }

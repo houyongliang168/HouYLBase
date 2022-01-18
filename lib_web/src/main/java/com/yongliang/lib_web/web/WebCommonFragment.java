@@ -36,8 +36,8 @@ import com.utils.DensityUtil;
 import com.utils.log.MyLog;
 import com.yongliang.lib_web.BR;
 import com.yongliang.lib_web.R;
-import com.yongliang.lib_web.databinding.FragmentCommonWebBinding;
 import com.yongliang.lib_web.databinding.ViewstubLayoutWebHeadBinding;
+import com.yongliang.lib_web.databinding.WebFragmentCommonWebBinding;
 import com.yongliang.lib_web.web.base.CommonWebChromeClient;
 import com.yongliang.lib_web.web.base.CommonWebViewClient;
 import com.yongliang.lib_web.web.base.H5WebPage;
@@ -59,7 +59,7 @@ import mvvm.CoreBaseMVVMFragment;
  * Use the {@link WebCommonFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class WebCommonFragment extends CoreBaseMVVMFragment<FragmentCommonWebBinding, WebpageViewModel> implements IWebPageView {
+public class WebCommonFragment extends CoreBaseMVVMFragment<WebFragmentCommonWebBinding, WebpageViewModel> implements IWebPageView {
 
     private static final String LOG_TAG = "WebCommonFragment";
     public H5WebPage mWP;
@@ -160,7 +160,7 @@ public class WebCommonFragment extends CoreBaseMVVMFragment<FragmentCommonWebBin
     }
 
     @Override
-    public void onBinding(FragmentCommonWebBinding b) {
+    public void onBinding(WebFragmentCommonWebBinding b) {
 //        oncreate 中初始化web
         initWeb();
     }
@@ -205,7 +205,7 @@ public class WebCommonFragment extends CoreBaseMVVMFragment<FragmentCommonWebBin
 
     @Override
     public int getLayoutId() {
-        return R.layout.fragment_common_web;
+        return R.layout.web_fragment_common_web;
     }
 
 

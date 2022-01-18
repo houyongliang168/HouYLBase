@@ -6,7 +6,7 @@
 
     <data>
 
-        <import type="common_webview.web.WebpageViewModel"></import>
+        <import type="com.yongliang.lib_web.web.WebpageViewModel"></import>
 
         <variable
             name="viewModel"
