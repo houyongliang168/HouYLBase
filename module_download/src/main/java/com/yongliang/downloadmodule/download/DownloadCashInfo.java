@@ -1,7 +1,7 @@
 package com.yongliang.downloadmodule.download;
 
 public class DownloadCashInfo {
-    //下载存储位置 默认为0    0下载到泰行销目录里面  1 为下载到相册里面
+    //下载存储位置 默认为0    0下载到目录里面  1 为下载到相册里面
     private String seat;
     //是否支持暂停 默认0     0不暂停，1为可暂停
     private String ispause;

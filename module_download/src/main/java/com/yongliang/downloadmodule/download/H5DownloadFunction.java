@@ -69,7 +69,7 @@ public class H5DownloadFunction  {
         }
 
 
-//        //位置 默认为0  下载到泰行销目录里面  1 为下载到相册里面
+//        //位置 默认为0  下载到目录里面  1 为下载到相册里面
 //        String seat = jsonObject.optString ("seat");
 //        //是否支持暂停 默认0     0不暂停，1为可暂停
 //        String ispause = jsonObject.optString ("ispause");
@@ -120,7 +120,7 @@ public class H5DownloadFunction  {
         object.setCanDownloadListener (new DownLoadObject.CanDownloadListener () {
             @Override
             public void onSuccess(long size) {
-                //默认下载存储位置 默认为0    0下载到泰行销目录里面
+                //默认下载存储位置 默认为0    0下载到目录里面
                 if ("0".equals (cashInfo.getSeat ())) {
                     mFilePath = getFileDirectory (activity);//初始化 FILe 路径
                 } else {

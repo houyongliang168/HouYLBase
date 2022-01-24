@@ -31,7 +31,7 @@ public class SimpleWebView extends WebView {
 
     public String getUserAgentEx() {
         if (sUserAgent == null) {
-            // 泰行销所有的webview必须添加下列两行代码
+            // 所有的webview必须添加下列两行代码
             WebSettings ws = getSettings();
             String ua = ws.getUserAgentString();
             sUserAgent = ua ;

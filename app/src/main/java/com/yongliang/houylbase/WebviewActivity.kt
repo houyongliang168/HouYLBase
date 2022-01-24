@@ -25,7 +25,7 @@ class WebviewActivity : AppCompatActivity() {
     private lateinit var binding: ActivityWebviewBinding
     @Inject
     lateinit var truck: Truck
-    val url = "https://isales.taikang.com/static/testSdk/sdk.html"
+    val url = "https://www.baidu.com"
    var mHasRecorded=false
     val  ss=SecondFragment()
     var webview:WebView?=null

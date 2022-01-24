@@ -49,7 +49,7 @@
             android:textColor="@color/color333333"
             android:textSize="18sp"
             android:textStyle="bold"
-            tools:text="泰康头条" />
+            tools:text="头条" />
         <!--图片 -->
         <ImageView
             android:id="@+id/img_title"

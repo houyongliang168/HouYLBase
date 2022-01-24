@@ -79,7 +79,7 @@ public class H5WebPage extends RelativeLayout {
         mWebView.setHorizontalScrollBarEnabled (false);
 
         WebSettings ws = mWebView.getSettings ();
-        //定义泰行销app的UserAgent
+        //定义app的UserAgent
         ws.setUserAgentString (mWebView.getUserAgentEx ());
         // 防止个人敏感数据泄漏
         ws.setSavePassword (false);
